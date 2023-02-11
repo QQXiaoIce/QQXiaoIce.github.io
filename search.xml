@@ -1,50 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/89d020af61f7/</url>
-    <content><![CDATA[<ul>
-<li><p>Python 官方的 PIP 库安装需要连接的服务器在国外，所以在国内访问服务器下载第三方库时并不方便，所以需要将服务器指定到国内的服务器，已获得更加稳定的使用体验。</p>
-  <span id="more"></span>
-
-<h3 id="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件"><a href="#首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件" class="headerlink" title="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip.ini文件"></a>首先在当前用户文件夹下新建一个 pip 文件夹，再在此文件夹下新建一个 pip.ini 文件</h3><p>  此处以 Windows 为例，其他系统也是如此，在当前用户目录下新建相应的 pip 文件夹和 pip.ini</p>
-<p>  <img src="https://seabreeze.s3.us-west-004.backblazeb2.com/2023/02/2dbfe009a4a68a1c75907d0cfdc71c04.png" alt="2DBFE009A4A68A1C75907D0CFDC71C04"></p>
-<h3 id="编辑该文件，在该文件中写入"><a href="#编辑该文件，在该文件中写入" class="headerlink" title="编辑该文件，在该文件中写入"></a>编辑该文件，在该文件中写入</h3>  <figure class="highlight ini"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"><span class="section">[install]</span></span><br><span class="line"><span class="attr">trusted-host</span> = https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></tbody></table></figure>
-
-<p>  使用哪个源可以根据自己的实际需求进行修改，直接替换即可</p>
-<ul>
-<li>阿里云                       <a href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a></li>
-<li> 中国科技大学           <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a> </li>
-<li> 豆瓣                          <a href="https://pypi.douban.com/simple/">https://pypi.douban.com/simple/</a> </li>
-<li> 清华大学                  <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a></li>
-<li> 中国科学技术大学  <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></li>
-</ul>
-</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>爬虫登录学校的教务系统</title>
-    <url>/8b5897d3fa74/</url>
-    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>事情是这样的，在看到舍友在做课表爬虫的项目，于是乎想着自己也写一个吧，我便立马打开了 pycharm，开始了教务系统的爬虫。<br>其实这个博客应该分为上下部分，这次更新上部分吧，主要是也只写了这么一部分<br>老规矩，正事之前美女镇楼！GoGoGo！</p>
-<span id="more"></span>
-
-<p><img src="https://seabreeze.s3.us-west-004.backblazeb2.com/2023/02/c0613ba9155d39bd3cdca069d2cabafe.jpg" alt="C0613BA9155D39BD3CDCA069D2CABAFE"></p>
-<hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><img src="https://seabreeze.s3.us-west-004.backblazeb2.com/2023/02/1d648e86e887ff73d541c16724fe66d4.png" alt="·"></p>
-<h3 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h3><p>这个项目主要是实现登录教务系统，爬取课表并非本次主要内容。</p>
-<p>这里主要是使用了 easyocr 的第三方库，使用库识别本地图片进行模拟真人登录</p>
-<h3 id="实际代码展示"><a href="#实际代码展示" class="headerlink" title="实际代码展示"></a>实际代码展示</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> easyocr</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求头</span></span><br><span class="line">headers = {</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.47'</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接受课表页面数据进行解析</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parsing</span>(<span class="params">text</span>):</span><br><span class="line">    html = etree.HTML(text)</span><br><span class="line">    <span class="comment"># print(text)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> html.xpath(<span class="string">'//*[@class="datalist"]/tr'</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i.xpath(<span class="string">'./td/text()'</span>):</span><br><span class="line">            <span class="built_in">print</span>(j)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    table = <span class="string">''</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># 创建一个会话</span></span><br><span class="line">        s = requests.Session()</span><br><span class="line">        <span class="comment"># 会话请求一张验证码</span></span><br><span class="line">        image = s.get(<span class="string">f'http://jw.glutnn.cn/academic/getCaptcha.do?<span class="subst">{random.random()}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="comment"># 保存验证码到本地</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'getCaptcha.png'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(image.content)</span><br><span class="line">        <span class="comment"># 使用OCR识别验证码</span></span><br><span class="line">        reader = easyocr.Reader([<span class="string">'ch_sim'</span>, <span class="string">'en'</span>])</span><br><span class="line">        result = reader.readtext(<span class="string">'getCaptcha.png'</span>)</span><br><span class="line">        <span class="comment"># 接受验证码变量</span></span><br><span class="line">        captcha = <span class="string">''</span></span><br><span class="line">        <span class="comment"># 读取验证码</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            word = i[<span class="number">1</span>]</span><br><span class="line">            captcha = word</span><br><span class="line">        <span class="comment"># 登录时需要提交的数据，为账号密码，以及动态地填充验证码</span></span><br><span class="line">        data = {</span><br><span class="line">            <span class="string">'j_username'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_password'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_captcha'</span>: <span class="string">f'<span class="subst">{captcha}</span>'</span></span><br><span class="line">        }</span><br><span class="line">        <span class="comment"># 在获取验证码后的会话进行验证OCR的结果</span></span><br><span class="line">        login = s.post(<span class="string">f'http://jw.glutnn.cn/academic/checkCaptcha.do?captchaCode=<span class="subst">{captcha}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> login.text == <span class="string">'false'</span>:</span><br><span class="line">            <span class="comment"># 结果为假不进行操作</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 验证通过时执行登录操作</span></span><br><span class="line">            loging = s.post(<span class="string">'http://jw.glutnn.cn/academic/j_acegi_security_check'</span>, data=data)</span><br><span class="line">            <span class="comment"># 进入个人课表页面，没访问这个页面无法进入本周课表页面</span></span><br><span class="line">            cu = s.get(<span class="string">f'http://jw.glutnn.cn/academic/student/currcourse/currcourse.jsdo?randomString=202109171926436Qv6aK&amp;groupId=&amp;moduleId=2000'</span>, headers=headers)</span><br><span class="line">            <span class="comment"># 访问本周课表页面</span></span><br><span class="line">            kb = s.get(<span class="string">'http://jw.glutnn.cn/academic/manager/coursearrange/studentWeeklyTimetable.do?yearid=41&amp;termid=3'</span>,headers=headers,data=data)</span><br><span class="line">            parsing(kb.text)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-        <tag>模拟登陆</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>利用 Python 给微信发消息？怎么做的？</title>
     <url>/aeec0178dafd/</url>
     <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>上周做过一个爬虫爬取课表的，本应该尽快出下半部分的内容的，但是嘛，中间放了个中秋假，就开始鸽了。<br>其实下半部分内容就是把爬到的课表进行格式化再通知自己而已。<br>其中我最先考虑的是使用 server 酱的，虽然 server 酱服务很到位，但是我想白嫖啊，因为我的 server 每天推送的次数已经全部安排得明明白白了。<br>接下来便有了用邮件提醒的想法，这个确实有得搞的，但今天先不说。<br>在我折腾我的路由后台时发现了里面的自建微信推送功能，便看到了微信开放平台的这个接口<br>那就开搞，又免费又是推送到微信又不会产生过多的邮件，你就说香不香吧</p>
@@ -197,6 +153,56 @@
         <tag>Python</tag>
         <tag>微信推送</tag>
         <tag>推送</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 执行 pip 安装下载慢？这里教你怎么解决</title>
+    <url>/6e9decc2d8bd/</url>
+    <content><![CDATA[<p>Python 官方的 PIP 库安装需要连接的服务器在国外，所以在国内访问服务器下载第三方库时并不方便，所以需要将服务器指定到国内的服务器，已获得更加稳定的使用体验。</p>
+<span id="more"></span>
+
+<h3 id="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件"><a href="#首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件" class="headerlink" title="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip.ini文件"></a>首先在当前用户文件夹下新建一个 pip 文件夹，再在此文件夹下新建一个 pip.ini 文件</h3><p>此处以 Windows 为例，其他系统也是如此，在当前用户目录下新建相应的 pip 文件夹和 pip.ini</p>
+<p><img src="https://seabreeze.s3.us-west-004.backblazeb2.com/2023/02/2dbfe009a4a68a1c75907d0cfdc71c04.png" alt="2DBFE009A4A68A1C75907D0CFDC71C04"></p>
+<h3 id="编辑该文件，在该文件中写入"><a href="#编辑该文件，在该文件中写入" class="headerlink" title="编辑该文件，在该文件中写入"></a>编辑该文件，在该文件中写入</h3><figure class="highlight ini"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"><span class="section">[install]</span></span><br><span class="line"><span class="attr">trusted-host</span> = https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<p>使用哪个源可以根据自己的实际需求进行修改，直接替换即可</p>
+<ul>
+<li>阿里云                       <a href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a></li>
+<li> 中国科技大学           <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a> </li>
+<li> 豆瓣                          <a href="https://pypi.douban.com/simple/">https://pypi.douban.com/simple/</a> </li>
+<li> 清华大学                  <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a></li>
+<li> 中国科学技术大学  <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>pip</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫登录学校的教务系统</title>
+    <url>/8b5897d3fa74/</url>
+    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>事情是这样的，在看到舍友在做课表爬虫的项目，于是乎想着自己也写一个吧，我便立马打开了 pycharm，开始了教务系统的爬虫。<br>其实这个博客应该分为上下部分，这次更新上部分吧，主要是也只写了这么一部分<br>老规矩，正事之前美女镇楼！GoGoGo！</p>
+<span id="more"></span>
+
+<p><img src="https://seabreeze.s3.us-west-004.backblazeb2.com/2023/02/c0613ba9155d39bd3cdca069d2cabafe.jpg" alt="C0613BA9155D39BD3CDCA069D2CABAFE"></p>
+<hr>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><img src="https://seabreeze.s3.us-west-004.backblazeb2.com/2023/02/1d648e86e887ff73d541c16724fe66d4.png" alt="·"></p>
+<h3 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h3><p>这个项目主要是实现登录教务系统，爬取课表并非本次主要内容。</p>
+<p>这里主要是使用了 easyocr 的第三方库，使用库识别本地图片进行模拟真人登录</p>
+<h3 id="实际代码展示"><a href="#实际代码展示" class="headerlink" title="实际代码展示"></a>实际代码展示</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> easyocr</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求头</span></span><br><span class="line">headers = {</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.47'</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接受课表页面数据进行解析</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parsing</span>(<span class="params">text</span>):</span><br><span class="line">    html = etree.HTML(text)</span><br><span class="line">    <span class="comment"># print(text)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> html.xpath(<span class="string">'//*[@class="datalist"]/tr'</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i.xpath(<span class="string">'./td/text()'</span>):</span><br><span class="line">            <span class="built_in">print</span>(j)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    table = <span class="string">''</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># 创建一个会话</span></span><br><span class="line">        s = requests.Session()</span><br><span class="line">        <span class="comment"># 会话请求一张验证码</span></span><br><span class="line">        image = s.get(<span class="string">f'http://jw.glutnn.cn/academic/getCaptcha.do?<span class="subst">{random.random()}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="comment"># 保存验证码到本地</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'getCaptcha.png'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(image.content)</span><br><span class="line">        <span class="comment"># 使用OCR识别验证码</span></span><br><span class="line">        reader = easyocr.Reader([<span class="string">'ch_sim'</span>, <span class="string">'en'</span>])</span><br><span class="line">        result = reader.readtext(<span class="string">'getCaptcha.png'</span>)</span><br><span class="line">        <span class="comment"># 接受验证码变量</span></span><br><span class="line">        captcha = <span class="string">''</span></span><br><span class="line">        <span class="comment"># 读取验证码</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            word = i[<span class="number">1</span>]</span><br><span class="line">            captcha = word</span><br><span class="line">        <span class="comment"># 登录时需要提交的数据，为账号密码，以及动态地填充验证码</span></span><br><span class="line">        data = {</span><br><span class="line">            <span class="string">'j_username'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_password'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_captcha'</span>: <span class="string">f'<span class="subst">{captcha}</span>'</span></span><br><span class="line">        }</span><br><span class="line">        <span class="comment"># 在获取验证码后的会话进行验证OCR的结果</span></span><br><span class="line">        login = s.post(<span class="string">f'http://jw.glutnn.cn/academic/checkCaptcha.do?captchaCode=<span class="subst">{captcha}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> login.text == <span class="string">'false'</span>:</span><br><span class="line">            <span class="comment"># 结果为假不进行操作</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 验证通过时执行登录操作</span></span><br><span class="line">            loging = s.post(<span class="string">'http://jw.glutnn.cn/academic/j_acegi_security_check'</span>, data=data)</span><br><span class="line">            <span class="comment"># 进入个人课表页面，没访问这个页面无法进入本周课表页面</span></span><br><span class="line">            cu = s.get(<span class="string">f'http://jw.glutnn.cn/academic/student/currcourse/currcourse.jsdo?randomString=202109171926436Qv6aK&amp;groupId=&amp;moduleId=2000'</span>, headers=headers)</span><br><span class="line">            <span class="comment"># 访问本周课表页面</span></span><br><span class="line">            kb = s.get(<span class="string">'http://jw.glutnn.cn/academic/manager/coursearrange/studentWeeklyTimetable.do?yearid=41&amp;termid=3'</span>,headers=headers,data=data)</span><br><span class="line">            parsing(kb.text)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+        <tag>模拟登陆</tag>
       </tags>
   </entry>
   <entry>
