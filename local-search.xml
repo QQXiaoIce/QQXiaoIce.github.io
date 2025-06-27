@@ -4,6 +4,38 @@
   
   
   <entry>
+    <title>通过标签加密测试</title>
+    <link href="/add_password_for_tags/"/>
+    <url>/add_password_for_tags/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="哦，这是一个无效的密码，请检查并重试。" data-whm="哦，这些解密内容无法验证，但你仍然可以查看。">  <script id="hbeData" type="hbeData" data-hmacdigest="8684575e51d23fa25a187b3ccd53f35355d188277d9be06a55af17084f08fa64">b37f033e8d8b211ace270e8f22e427d605be8f9108dc097a6ec0813324bb2b1594d75815aaf152baa8be7123b41aab186facb552c685cde6960932cb7f32c991</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">嘿，这里需要密码才能访问。</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>private</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>测试加密文章</title>
+    <link href="/test_add_password/"/>
+    <url>/test_add_password/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="哦，这是一个无效的密码，请检查并重试。" data-whm="哦，这些解密内容无法验证，但你仍然可以查看。">  <script id="hbeData" type="hbeData" data-hmacdigest="c7597aa6dbdadc6d665b076c84dc7c4d8cf662f142b64de22d7cdbf9b5778196">4630436162ade97ba2718b7d0c4b3b63518b8396ce3db5e7e8520636c8109a55d83321820be04a50fd7e7fdb78a0f6bb49b94af94a9c1ef5edb556d32a32838a</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">嘿，这里需要密码才能访问。</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>wallhaven爬虫</title>
     <link href="/wallhaven-web-crawler-guide/"/>
     <url>/wallhaven-web-crawler-guide/</url>
