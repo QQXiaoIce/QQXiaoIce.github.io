@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>如何使用hexo-encrypt插件对Hexo博客进行加密</title>
+    <link href="/hexo-encrypt-tutorial/"/>
+    <url>/hexo-encrypt-tutorial/</url>
+    
+    <content type="html"><![CDATA[<hr><hr><h3 id="入个使用hexo-encrypt-插件加密Hexo博客"><a href="#入个使用hexo-encrypt-插件加密Hexo博客" class="headerlink" title="入个使用hexo-encrypt 插件加密Hexo博客"></a>入个使用hexo-encrypt 插件加密Hexo博客</h3><p>Hexo 文章加密可以帮助你保护私密内容，确保只有知道密码的用户才能访问。本文将介绍如何使用 <strong>hexo-encrypt</strong> 插件实现 Hexo 博客的文章加密。</p><hr><h3 id="1-安装-hexo-encrypt-插件"><a href="#1-安装-hexo-encrypt-插件" class="headerlink" title="1. 安装 hexo-encrypt 插件"></a>1. 安装 hexo-encrypt 插件</h3><p>首先，在你的 Hexo 博客根目录下打开终端，运行以下命令安装 <strong>hexo-encrypt</strong> 插件：</p><p>Bash</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-encrypt --save<br></code></pre></td></tr></table></figure><hr><h3 id="2-配置-config-yml"><a href="#2-配置-config-yml" class="headerlink" title="2. 配置 _config.yml"></a>2. 配置 _config.yml</h3><p>安装完成后，打开你 Hexo 博客根目录下的 <strong>_config.yml</strong> 文件，添加或修改以下配置：</p><p>YAML</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Hexo Encrypt</span><br><span class="hljs-attr">encrypt:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># 启用加密功能</span><br>  <span class="hljs-attr">default_password:</span> <span class="hljs-string">your_default_password</span> <span class="hljs-comment"># 可选：设置一个默认密码，如果你不想为每篇文章单独设置密码</span><br>  <span class="hljs-attr">abstract:</span> <span class="hljs-string">这里有一些加密的内容，需要密码才能继续阅读。</span> <span class="hljs-comment"># 加密文章的摘要提示</span><br>  <span class="hljs-attr">message:</span> <span class="hljs-string">嘿，这里需要密码才能访问。</span> <span class="hljs-comment"># 密码输入框上方的提示信息</span><br>  <span class="hljs-attr">tags:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">private</span><br>      <span class="hljs-attr">password:</span> <span class="hljs-string">your_tag_password</span> <span class="hljs-comment"># 该标签的密码</span><br>  <span class="hljs-attr">wrong_pass_message:</span> <span class="hljs-string">哦，这是一个无效的密码，请检查并重试。</span> <span class="hljs-comment"># 密码错误提示</span><br>  <span class="hljs-attr">wrong_hash_message:</span> <span class="hljs-string">哦，这些解密内容无法验证，但你仍然可以查看。</span> <span class="hljs-comment"># 哈希校验失败提示</span><br>  <span class="hljs-comment"># silent: true # 如果设置为 true，将禁用加密相关的日志输出</span><br></code></pre></td></tr></table></figure><p>请注意：</p><ul><li>将 <code>your_default_password</code> 替换为你希望设置的默认密码。如果不需要默认密码，可以删除这一行。</li><li><code>abstract</code>、<code>message</code>、<code>wrong_pass_message</code> 和 <code>wrong_hash_message</code> 都可以根据你的需求自定义。</li><li>对于 <code>tags</code> 部分，将 <code>your_tag_password</code> 替换为你希望为带有 <code>private</code> 标签的文章设置的密码。你可以根据需要添加更多标签及其对应的密码。</li></ul><hr><h3 id="3-加密文章"><a href="#3-加密文章" class="headerlink" title="3. 加密文章"></a>3. 加密文章</h3><p>你可以通过两种主要方式加密文章：为单篇文章设置密码，或利用 <code>_config.yml</code> 中的配置为多篇文章设置默认密码或基于标签的密码。</p><h4 id="方法一：为单篇文章设置密码"><a href="#方法一：为单篇文章设置密码" class="headerlink" title="方法一：为单篇文章设置密码"></a>方法一：为单篇文章设置密码</h4><p>在你的 Hexo 文章的 Markdown 文件（例如 <code>source/_posts/your-post.md</code>）的头部（Front-matter）添加 <code>password</code> 字段，并设置你的密码：</p><p>Markdown</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: 我的加密文章<br>date: 2023-10-27 10:00:00<br>tags:<br><span class="hljs-bullet">  -</span> 加密<br><span class="hljs-bullet">  -</span> 私密<br><span class="hljs-section">password: your<span class="hljs-emphasis">_article_</span>password # 这篇文章的密码</span><br><span class="hljs-section">---</span><br><br>这是这篇文章的秘密内容。只有输入正确密码才能看到。<br></code></pre></td></tr></table></figure><p>将 <code>your_article_password</code> 替换为你希望为该文章设置的密码。这种方法会覆盖 <code>_config.yml</code> 中设置的默认密码或标签密码，确保该文章只使用此特定密码。</p><h4 id="方法二：利用-config-yml-中的默认密码或标签密码"><a href="#方法二：利用-config-yml-中的默认密码或标签密码" class="headerlink" title="方法二：利用 _config.yml 中的默认密码或标签密码"></a>方法二：利用 <code>_config.yml</code> 中的默认密码或标签密码</h4><p>a. 使用默认密码：</p><p>如果你在 _config.yml 中设置了 default_password，并且想使用这个默认密码加密文章，那么你无需在文章的 Front-matter 中添加 password 字段。文章内容会自动应用你配置的默认密码。</p><p>b. 使用标签密码：</p><p>如果你在 _config.yml 的 tags 部分为某个标签（例如 private）设置了密码，那么任何带有该标签的文章都会被加密。你只需在文章的 Front-matter 中添加对应的标签即可：</p><p>Markdown</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: 我的私密文章<br>date: 2023-10-27 10:00:00<br>tags:<br><span class="hljs-section">  - private # 这篇文章将使用 `<span class="hljs-emphasis">_config.yml` 中 `private` 标签对应的密码</span></span><br><span class="hljs-emphasis"><span class="hljs-section">---</span></span><br><span class="hljs-emphasis"><span class="hljs-section"></span></span><br><span class="hljs-emphasis"><span class="hljs-section">这是这篇私密文章的内容。</span></span><br></code></pre></td></tr></table></figure><hr><h3 id="4-生成和部署博客"><a href="#4-生成和部署博客" class="headerlink" title="4. 生成和部署博客"></a>4. 生成和部署博客</h3><p>完成上述配置后，保存所有文件。然后，在你的 Hexo 博客根目录下运行以下命令，生成并部署你的博客：</p><p>Bash</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure><p>现在，当访问你加密的文章时，页面上将显示密码输入框，只有输入正确的密码才能查看文章内容。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>加密</tag>
+      
+      <tag>hexo-encrypt</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>wallhaven爬虫</title>
     <link href="/wallhaven-web-crawler-guide/"/>
     <url>/wallhaven-web-crawler-guide/</url>
