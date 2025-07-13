@@ -42,6 +42,7 @@ body {
     width: 100%;
     max-width: 900px;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 header {
@@ -103,8 +104,8 @@ h1 {
 
 .nav-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
 }
 
 .nav-item {
@@ -112,15 +113,15 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 80px; /* 减小最小高度 */
+    min-height: 80px;
     background-color: var(--link-bg-color);
     border: 1px solid var(--link-border-color);
     border-radius: 12px;
-    padding: 15px 20px; /* 减小内边距 */
+    padding: 15px 20px;
     text-decoration: none;
     color: var(--text-color);
     font-size: 1em;
-    font-weight: 600;
+    /* font-weight: 600; */
     box-shadow: var(--box-shadow-light);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -169,29 +170,55 @@ h1 {
 /* 手机端适配 */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     .nav-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 12px;
     }
 
     .nav-item {
-        font-size: 0.9em;
-        min-height: 70px; /* 手机端减小最小高度 */
-        padding: 15px;
-    }
-
-    .back-to-home {
-        top: 15px;
-        right: 15px;
-        font-size: 0.8em;
+        font-size: 0.85em;
+        min-height: 65px;
+        padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
     .nav-grid {
         grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .nav-item {
+        font-size: 0.8em;
+        min-height: 60px;
+    }
+
+    .search-container {
+        margin-bottom: 20px;
+    }
+
+    #search-input {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .category-title {
+        font-size: 1.3em;
+        margin-bottom: 12px;
     }
 }
