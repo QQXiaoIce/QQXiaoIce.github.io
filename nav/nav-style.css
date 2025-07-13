@@ -75,6 +75,7 @@ h1 {
     box-shadow: var(--box-shadow-light);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    box-sizing: border-box; 
 }
 
 #search-input::placeholder {
@@ -167,24 +168,6 @@ h1 {
     box-shadow: var(--box-shadow-hover);
 }
 
-/* 手机端适配 */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    .nav-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .nav-item {
-        font-size: 0.85em;
-        min-height: 65px;
-        padding: 10px;
-    }
-}
-
 @media (max-width: 480px) {
     body {
         padding: 10px;
@@ -199,7 +182,7 @@ h1 {
     }
 
     .nav-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
     }
 
@@ -209,12 +192,14 @@ h1 {
     }
 
     .search-container {
+        max-width: 900px
         margin-bottom: 20px;
     }
 
     #search-input {
         padding: 10px 15px;
         font-size: 0.9em;
+        box-sizing: border-box; 
     }
 
     .category-title {
