@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>解决 pip 安装慢的问题：国内镜像源加速指南</title>
+    <link href="/pip-slow-fix-china-mirrors-guide/"/>
+    <url>/pip-slow-fix-china-mirrors-guide/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>hg</p><p>首先</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Python</category>
+      
+      <category>技术教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+      <tag>pip</tag>
+      
+      <tag>国内镜像</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>基于MeingJS在Hexo中插入音乐的方法</title>
     <link href="/meingjs-hexo-audio-plugin/"/>
     <url>/meingjs-hexo-audio-plugin/</url>
