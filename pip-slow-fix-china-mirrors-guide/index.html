@@ -19,15 +19,15 @@
   <meta name="author" content="Harrison">
   <meta name="keywords" content="">
   
-    <meta name="description" content="hg 首先">
+    <meta name="description" content="问题的根源：为什么 pip 下载慢？在使用 pip 安装 Python 包时，总会感觉下载速度特别慢，有时候甚至会因为网络超时而安装失败。究其原因，主要是因为 pip 默认的官方源服务器在国外，国内访问自然就慢了。为了解决这个问题，最直接有效的办法就是把下载源切换到国内的镜像服务器。 这里记录一下两种设置 pip 镜像源的方法：一种是临时的，一种是永久的。 方法一：临时使用镜像源如果只是偶尔想给某">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决 pip 安装慢的问题：国内镜像源加速指南">
 <meta property="og:url" content="https://blog.qfmy.vip/pip-slow-fix-china-mirrors-guide/">
 <meta property="og:site_name" content="盒里森活">
-<meta property="og:description" content="hg 首先">
+<meta property="og:description" content="问题的根源：为什么 pip 下载慢？在使用 pip 安装 Python 包时，总会感觉下载速度特别慢，有时候甚至会因为网络超时而安装失败。究其原因，主要是因为 pip 默认的官方源服务器在国外，国内访问自然就慢了。为了解决这个问题，最直接有效的办法就是把下载源切换到国内的镜像服务器。 这里记录一下两种设置 pip 镜像源的方法：一种是临时的，一种是永久的。 方法一：临时使用镜像源如果只是偶尔想给某">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-07-20T02:30:00.000Z">
-<meta property="article:modified_time" content="2025-08-28T15:51:48.698Z">
+<meta property="article:published_time" content="2025-08-30T10:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-01T16:55:22.278Z">
 <meta property="article:author" content="Harrison">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="pip">
@@ -225,8 +225,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-20 10:30" pubdate>
-          2025年7月20日 上午
+        <time datetime="2025-08-30 18:00" pubdate>
+          2025年8月30日 晚上
         </time>
       </span>
     
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3 字
+          763 字
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          1 分钟
+          7 分钟
         
       </span>
     
@@ -290,8 +290,45 @@
             
               <div class="markdown-body">
                 
-                <p>hg</p>
-<p>首先</p>
+                <h2 id="问题的根源：为什么-pip-下载慢？"><a href="#问题的根源：为什么-pip-下载慢？" class="headerlink" title="问题的根源：为什么 pip 下载慢？"></a>问题的根源：为什么 pip 下载慢？</h2><p>在使用 <code>pip</code> 安装 Python 包时，总会感觉下载速度特别慢，有时候甚至会因为网络超时而安装失败。究其原因，主要是因为 <code>pip</code> 默认的官方源服务器在国外，国内访问自然就慢了。为了解决这个问题，最直接有效的办法就是把下载源切换到国内的镜像服务器。</p>
+<p>这里记录一下两种设置 <code>pip</code> 镜像源的方法：一种是临时的，一种是永久的。</p>
+<h2 id="方法一：临时使用镜像源"><a href="#方法一：临时使用镜像源" class="headerlink" title="方法一：临时使用镜像源"></a>方法一：临时使用镜像源</h2><p>如果只是偶尔想给某个包装个速，或者在别人的环境上临时操作一下，用这个方法最方便。它不会修改 <code>pip</code> 的默认配置，只需要在安装命令后面加上 <code>-i</code> 或 <code>--index-url</code> 参数，指定本次安装使用的镜像源地址就行。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>比如，我想用清华大学的镜像源来安装 <code>requests</code> 这个包，命令就可以这么写：</p>
+<p>Bash</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">pip install requests -i https:<span class="hljs-regexp">//</span>pypi.tuna.tsinghua.edu.cn<span class="hljs-regexp">/simple/</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="常用国内镜像源"><a href="#常用国内镜像源" class="headerlink" title="常用国内镜像源"></a>常用国内镜像源</h3><p>下面整理了几个常用的国内镜像地址，可以根据自己的网络情况选择：</p>
+<ul>
+<li><strong>清华大学：</strong> <code>https://pypi.tuna.tsinghua.edu.cn/simple/</code></li>
+<li><strong>阿里云：</strong> <code>https://mirrors.aliyun.com/pypi/simple/</code></li>
+<li><strong>豆瓣：</strong> <code>https://pypi.doubanio.com/simple/</code></li>
+<li><strong>中国科学技术大学：</strong> <code>https://pypi.mirrors.ustc.edu.cn/simple/</code></li>
+</ul>
+<h2 id="方法二：永久配置镜像源"><a href="#方法二：永久配置镜像源" class="headerlink" title="方法二：永久配置镜像源"></a>方法二：永久配置镜像源</h2><p>每次安装都手动加参数还是太麻烦了，对于自己的开发环境，我更倾向于一劳永逸的解决方案——直接修改配置文件，让 <code>pip</code> 默认就使用国内镜像源。</p>
+<h3 id="1-找到配置文件路径"><a href="#1-找到配置文件路径" class="headerlink" title="1. 找到配置文件路径"></a>1. 找到配置文件路径</h3><p><code>pip</code> 的配置文件位置根据操作系统的不同而不同：</p>
+<ul>
+<li><strong>Windows:</strong> 在文件资源管理器的地址栏输入 <code>%APPDATA%\pip</code>，然后在这个文件夹里创建一个 <code>pip.ini</code> 文件。</li>
+<li><strong>macOS &#x2F; Linux:</strong> 配置文件路径是 <code>~/.config/pip/pip.conf</code>。如果 <code>~/.config/pip</code> 目录或 <code>pip.conf</code> 文件不存在，需要手动创建。</li>
+</ul>
+<h3 id="2-修改或创建配置文件"><a href="#2-修改或创建配置文件" class="headerlink" title="2. 修改或创建配置文件"></a>2. 修改或创建配置文件</h3><p>用文本编辑器打开这个配置文件（没有就新建一个），然后把下面的内容粘贴进去。这里还是以清华大学的源为例：</p>
+<p>Ini, TOML</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[global]</span><br><span class="hljs-attr">index-url</span> = https://pypi.tuna.tsinghua.edu.cn/simple<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-保存并验证"><a href="#3-保存并验证" class="headerlink" title="3. 保存并验证"></a>3. 保存并验证</h3><p>保存文件后，这个配置就永久生效了。之后再使用 <code>pip install</code> 命令安装任何包，都会自动从配置好的国内镜像源下载，速度会快非常多。</p>
+<p>可以随便装个小包测试一下效果，比如：</p>
+<p>Bash</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">pip <span class="hljs-keyword">install</span> numpy<br></code></pre></td></tr></table></figure>
+
+<p>如果看到下载速度有质的飞跃，那就说明配置成功了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><strong>临时使用：</strong> 适合在临时环境或者偶尔需要加速的场景，命令简单直接。</li>
+<li><strong>永久配置：</strong> 自己的开发环境首选，一次配置，后续所有安装都会加速，能极大提升效率。</li>
+</ul>
+<p>通过这两种方法，基本上就能告别 <code>pip</code> 下载慢的烦恼了。</p>
 
                 
               </div>
@@ -361,7 +398,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年7月20日</div>
+          <div>2025年8月30日</div>
         </div>
       
       
@@ -393,9 +430,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/%E2%80%8Bqq-music-ad-free-version/" title="QQ音乐广告泛滥？试试这个纯净版本">
+                      <a href="/cyber-checklist-vol-01/" title="赛博清单 Vol.01">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">QQ音乐广告泛滥？试试这个纯净版本</span>
+                        <span class="hidden-mobile">赛博清单 Vol.01</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -403,8 +440,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/meingjs-hexo-audio-plugin/" title="基于MeingJS在Hexo中插入音乐的方法">
-                        <span class="hidden-mobile">基于MeingJS在Hexo中插入音乐的方法</span>
+                      <a href="/qq-music-ad-free-version/" title="QQ音乐广告泛滥？试试这个纯净版本">
+                        <span class="hidden-mobile">QQ音乐广告泛滥？试试这个纯净版本</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
