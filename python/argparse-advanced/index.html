@@ -19,15 +19,15 @@
   <meta name="author" content="Harrison">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在上一篇笔记中，我们解析了 sys.argv。作为一个原始的字符串列表，Python 解释器会把我们在命令行里输入的所有内容，一股脑地塞进去传给脚本。 但在构建复杂的命令行工具（CLI）时，sys.argv 的局限性暴露无遗：它不具备类型感知（所有参数皆为 String），也没有语义校验（无法自动判断必填项）。这意味着开发者必须编写大量样板代码来处理类型转换 (str -&gt; int)、边界检">
+    <meta name="description" content="​	 在上一篇笔记中，我们解析了 sys.argv。作为一个原始的字符串列表，Python 解释器会把我们在命令行里输入的所有内容，一股脑地塞进去传给脚本。 但在构建复杂的命令行工具（CLI）时，sys.argv 的局限性暴露无遗：它不具备类型感知（所有参数皆为 String），也没有语义校验（无法自动判断必填项）。这意味着开发者必须编写大量样板代码来处理类型转换 (str -&gt; int)、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从 sys.argv 到 argparse：Python 命令行参数升级指南">
 <meta property="og:url" content="https://blog.qfmy.vip/python/argparse-advanced/">
 <meta property="og:site_name" content="盒里森活">
-<meta property="og:description" content="在上一篇笔记中，我们解析了 sys.argv。作为一个原始的字符串列表，Python 解释器会把我们在命令行里输入的所有内容，一股脑地塞进去传给脚本。 但在构建复杂的命令行工具（CLI）时，sys.argv 的局限性暴露无遗：它不具备类型感知（所有参数皆为 String），也没有语义校验（无法自动判断必填项）。这意味着开发者必须编写大量样板代码来处理类型转换 (str -&gt; int)、边界检">
+<meta property="og:description" content="​	 在上一篇笔记中，我们解析了 sys.argv。作为一个原始的字符串列表，Python 解释器会把我们在命令行里输入的所有内容，一股脑地塞进去传给脚本。 但在构建复杂的命令行工具（CLI）时，sys.argv 的局限性暴露无遗：它不具备类型感知（所有参数皆为 String），也没有语义校验（无法自动判断必填项）。这意味着开发者必须编写大量样板代码来处理类型转换 (str -&gt; int)、">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-12-03T13:30:00.000Z">
-<meta property="article:modified_time" content="2025-12-03T17:04:06.444Z">
+<meta property="article:published_time" content="2025-12-03T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-28T15:36:23.581Z">
 <meta property="article:author" content="Harrison">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="命令行参数">
@@ -226,7 +226,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-12-03 21:30" pubdate>
+        <time datetime="2025-12-03 23:00" pubdate>
           2025年12月3日 晚上
         </time>
       </span>
@@ -291,7 +291,8 @@
             
               <div class="markdown-body">
                 
-                <p>在上一篇笔记中，我们解析了 <code>sys.argv</code>。作为一个<strong>原始的字符串列表</strong>，Python 解释器会把我们在命令行里输入的所有内容，一股脑地塞进去传给脚本。</p>
+                <p>​	</p>
+<p>在上一篇笔记中，我们解析了 <code>sys.argv</code>。作为一个<strong>原始的字符串列表</strong>，Python 解释器会把我们在命令行里输入的所有内容，一股脑地塞进去传给脚本。</p>
 <p>但在构建复杂的命令行工具（CLI）时，<code>sys.argv</code> 的局限性暴露无遗：它不具备<strong>类型感知</strong>（所有参数皆为 String），也没有<strong>语义校验</strong>（无法自动判断必填项）。这意味着开发者必须编写大量样板代码来处理类型转换 (<code>str</code> -&gt; <code>int</code>)、边界检查 (<code>try-except</code>) 以及帮助文档的生成。</p>
 <p>这种“造轮子”的过程不仅繁琐，而且写出来的脚本既不健壮，也不像一个正经的命令行工具。</p>
 <p>为了解决这些痛点，Python 标准库提供了更专业的解决方案 —— <code>argparse</code>。</p>
@@ -338,7 +339,7 @@
 
 <p><strong>解析</strong>：<code>argparse</code> 会自动把你写的说明格式化到文档里。这样用户在查阅帮助时，一眼就能看懂每个参数的具体用途。</p>
 <h4 id="3-类型控制与运行时安全"><a href="#3-类型控制与运行时安全" class="headerlink" title="3. 类型控制与运行时安全"></a>3. 类型控制与运行时安全</h4><p>接下来我们处理一个常见的计算场景：输入一个数字，计算它的平方。 初学者常犯的一个错误是直接拿来算：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> argparse<br><br>parser = argparse.ArgumentParser()<br><span class="hljs-comment"># 定义一个参数用于接收数字</span><br>parser.add_argument(<span class="hljs-string">&quot;number&quot;</span>, <span class="hljs-built_in">help</span>=<span class="hljs-string">&quot;请输入一个数字计算平方&quot;</span>)<br>args = parser.parse_args()<br><br><span class="hljs-comment"># 错误示范：直接进行数学运算</span><br><span class="hljs-built_in">print</span>(args.number ** <span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">import argparse<br><br>parser = argparse.ArgumentParser()<br><span class="hljs-comment"># 定义一个参数用于接收数字</span><br>parser.add_argument(<span class="hljs-string">&quot;number&quot;</span>, <span class="hljs-built_in">help</span>=<span class="hljs-string">&quot;请输入一个数字计算平方&quot;</span>)<br>args = parser.parse_args()<br><br><span class="hljs-comment"># 错误示范：直接进行数学运算</span><br><span class="hljs-built_in">print</span>(args.number ** 2)<br></code></pre></td></tr></table></figure>
 
 <p>运行该程序会抛出异常：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ python prog.py 5<br>Traceback (most recent call last):<br>  File <span class="hljs-string">&quot;prog.py&quot;</span>, line 7, <span class="hljs-keyword">in</span> &lt;module&gt;<br>    <span class="hljs-built_in">print</span>(args.number ** 2)<br>TypeError: unsupported operand <span class="hljs-built_in">type</span>(s) <span class="hljs-keyword">for</span> ** or pow(): <span class="hljs-string">&#x27;str&#x27;</span> and <span class="hljs-string">&#x27;int&#x27;</span><br></code></pre></td></tr></table></figure>
@@ -416,7 +417,6 @@
 
 <p>查看帮助文档，<code>argparse</code> 已经自动将它们聚合在了一起：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ python prog.py -h<br>usage: prog.py [-h] [-v]<br><br>options:<br>  -h, --<span class="hljs-built_in">help</span>     show this <span class="hljs-built_in">help</span> message and <span class="hljs-built_in">exit</span><br>  -v, --vip      开启VIP模式<br></code></pre></td></tr></table></figure>
-
 
                 
               </div>
@@ -512,6 +512,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/python/base/" title="认识Python3">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">认识Python3</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
