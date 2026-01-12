@@ -124,7 +124,27 @@
 <script>
     let currentMode = 'text';
     let fileToEncrypt = null;
+    // 辅助：给文件名添加时间戳 (格式: _YYYYMMDD_HHmmss)
+    function addTimestampToName(filename) {
+        const now = new Date();
+        const timeStr = "_" + 
+            now.getFullYear() +
+            String(now.getMonth() + 1).padStart(2, '0') +
+            String(now.getDate()).padStart(2, '0') + "_" +
+            String(now.getHours()).padStart(2, '0') +
+            String(now.getMinutes()).padStart(2, '0') +
+            String(now.getSeconds()).padStart(2, '0');
 
+        const dotIndex = filename.lastIndexOf('.');
+        
+        if (dotIndex === -1) {
+            // 没有后缀名
+            return filename + timeStr;
+        } else {
+            // 插入到后缀名前
+            return filename.substring(0, dotIndex) + timeStr + filename.substring(dotIndex);
+        }
+    }
     // Toast 提示工具
     function showToast(msg, type = 'normal') {
         const toast = document.getElementById("toast");
@@ -208,6 +228,7 @@
 
         try {
             if (currentMode === 'text') {
+                // --- 文本模式 (逻辑不变) ---
                 const text = document.getElementById('plainInput').value;
                 if (!text) return showToast("请输入要加密的文字", "error");
 
@@ -218,11 +239,11 @@
                 document.getElementById('cipherResultBox').style.display = 'block';
                 document.getElementById('cipherOutput').value = base64Str;
                 
-                // 自动滚动到底部
                 document.getElementById('cipherResultBox').scrollIntoView({behavior: "smooth"});
                 showToast("加密成功！请复制密文", "success");
 
             } else {
+                // --- 文件模式 (修改了文件名逻辑) ---
                 if (!fileToEncrypt) return showToast("请先选择文件", "error");
                 
                 const data = await fileToEncrypt.arrayBuffer();
@@ -231,8 +252,16 @@
                 const blob = new Blob([combined]);
                 const link = document.createElement('a');
                 link.href = URL.createObjectURL(blob);
-                link.download = fileToEncrypt.name + ".enc";
+                
+                // 【修改核心】：原始文件名 -> 加时间戳 -> 加 .enc 后缀
+                // 结果示例：image_20240321_123055.png.enc
+                const nameWithTime = addTimestampToName(fileToEncrypt.name);
+                link.download = nameWithTime + ".enc";
+                
+                document.body.appendChild(link); // 兼容性更好
                 link.click();
+                document.body.removeChild(link);
+                
                 showToast("加密文件已开始下载", "success");
             }
         } catch (e) {
@@ -373,6 +402,8 @@
         for (let i = 0; i < len; i++) bytes[i] = binary_string.charCodeAt(i);
         return bytes.buffer;
     }
+
+
 </script>
 </body>
 </html>

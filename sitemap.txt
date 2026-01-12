@@ -1,6 +1,10 @@
+https://blog.qfmy.vip/python/sys-argv-introduction/
+https://blog.qfmy.vip/python/base/
+https://blog.qfmy.vip/python/argparse-advanced/
+https://blog.qfmy.vip/about
+https://blog.qfmy.vip/music
 https://blog.qfmy.vip/nav/nav-template
 https://blog.qfmy.vip/nav/nav
-https://blog.qfmy.vip/escape-office-spring2025-photo/
 https://blog.qfmy.vip/termux-sshd-auto-start-guide/
 https://blog.qfmy.vip/wallhaven-web-crawler-guide/
 https://blog.qfmy.vip/meingjs-hexo-audio-plugin/
@@ -10,11 +14,7 @@ https://blog.qfmy.vip/pip-slow-fix-china-mirrors-guide/
 https://blog.qfmy.vip/qq-music-ad-free-version/
 https://blog.qfmy.vip/cyber-checklist-vol-01/
 https://blog.qfmy.vip/cyber-checklist-vol-02/
-https://blog.qfmy.vip/python/sys-argv-introduction/
-https://blog.qfmy.vip/python/base/
-https://blog.qfmy.vip/python/argparse-advanced/
-https://blog.qfmy.vip/about
-https://blog.qfmy.vip/music
+https://blog.qfmy.vip/escape-office-spring2025-photo/
 https://blog.qfmy.vip/
 https://blog.qfmy.vip/tags/%E6%91%84%E5%BD%B1/
 https://blog.qfmy.vip/tags/%E5%87%BA%E8%A1%8C/
