@@ -4,7 +4,7 @@
   <url>
     <loc>https://blog.qfmy.vip/nav/nav-template</loc>
     
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,88 +13,7 @@
   <url>
     <loc>https://blog.qfmy.vip/nav/nav</loc>
     
-    <lastmod>2025-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/pip-slow-fix-china-mirrors-guide/</loc>
-    
-    <lastmod>2025-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/qq-music-ad-free-version/</loc>
-    
-    <lastmod>2025-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/cyber-checklist-vol-01/</loc>
-    
-    <lastmod>2025-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/cyber-checklist-vol-02/</loc>
-    
-    <lastmod>2025-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/python/sys-argv-introduction/</loc>
-    
-    <lastmod>2025-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/python/base/</loc>
-    
-    <lastmod>2025-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/python/argparse-advanced/</loc>
-    
-    <lastmod>2025-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/about</loc>
-    
-    <lastmod>2025-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/music</loc>
-    
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -103,7 +22,7 @@
   <url>
     <loc>https://blog.qfmy.vip/escape-office-spring2025-photo/</loc>
     
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -112,7 +31,7 @@
   <url>
     <loc>https://blog.qfmy.vip/termux-sshd-auto-start-guide/</loc>
     
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -121,7 +40,7 @@
   <url>
     <loc>https://blog.qfmy.vip/wallhaven-web-crawler-guide/</loc>
     
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -130,7 +49,7 @@
   <url>
     <loc>https://blog.qfmy.vip/meingjs-hexo-audio-plugin/</loc>
     
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -139,7 +58,7 @@
   <url>
     <loc>https://blog.qfmy.vip/hexo-encrypt-tutorial/</loc>
     
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -148,7 +67,88 @@
   <url>
     <loc>https://blog.qfmy.vip/switch-npm-mirror-easy/</loc>
     
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/pip-slow-fix-china-mirrors-guide/</loc>
+    
+    <lastmod>2026-01-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/qq-music-ad-free-version/</loc>
+    
+    <lastmod>2026-01-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/cyber-checklist-vol-01/</loc>
+    
+    <lastmod>2026-01-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/cyber-checklist-vol-02/</loc>
+    
+    <lastmod>2026-01-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/python/sys-argv-introduction/</loc>
+    
+    <lastmod>2026-01-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/python/base/</loc>
+    
+    <lastmod>2026-01-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/python/argparse-advanced/</loc>
+    
+    <lastmod>2026-01-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/about</loc>
+    
+    <lastmod>2026-01-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/music</loc>
+    
+    <lastmod>2026-01-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -157,7 +157,7 @@
 
   <url>
     <loc>https://blog.qfmy.vip/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -165,273 +165,273 @@
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E6%91%84%E5%BD%B1/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E5%87%BA%E8%A1%8C/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/Termux/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/SSH%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/OpenSSH/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/Linux%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E7%BB%88%E7%AB%AF%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/Python/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/wallhaven/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E5%A3%81%E7%BA%B8%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/Hexo%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/hexo-tag-aplayer/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/MetingJS/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E7%BD%91%E9%A1%B5%E6%92%AD%E6%94%BE%E5%99%A8/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/Hexo/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E5%8A%A0%E5%AF%86/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/hexo-encrypt/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/npm/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/npm%E6%8D%A2%E5%8E%9F/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/nrm/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/pip/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/QQ%E9%9F%B3%E4%B9%90/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/Windows/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E6%91%B8%E9%B1%BC%E7%A5%9E%E5%99%A8/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/sys-%E6%A8%A1%E5%9D%97/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/Python%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/tags/argparse/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -440,84 +440,84 @@
   
   <url>
     <loc>https://blog.qfmy.vip/categories/%E6%97%85%E8%A1%8C/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/categories/Hexo%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/categories/%E6%97%85%E8%A1%8C/%E6%91%84%E5%BD%B1/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/Node-js/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/Termux/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/categories/Python/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/categories/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/categories/Hexo%E6%95%99%E7%A8%8B/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/categories/Python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/categories/Python%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.qfmy.vip/categories/Python/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
