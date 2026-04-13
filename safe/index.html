@@ -2,408 +2,556 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>端对端加密 (舒适交互版)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非对称加密解密工具</title>
     <style>
-        :root { --primary: #007AFF; --success: #34C759; --error: #FF3B30; --bg: #f2f2f7; --card: #fff; }
-        body { font-family: -apple-system, sans-serif; background: var(--bg); color: #333; padding: 20px; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        .container { width: 100%; max-width: 550px; display: grid; gap: 20px; }
-        
-        /* 卡片样式 */
-        .card { background: var(--card); border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden; }
-        .card-header { padding: 18px 20px; border-bottom: 1px solid #e5e5ea; font-weight: 600; background: #fff; font-size: 1.1rem;}
-        .card-body { padding: 20px; }
-
-        /* 选项卡 */
-        .tabs { display: flex; background: #eef0f2; padding: 4px; border-radius: 10px; margin-bottom: 20px; }
-        .tab { flex: 1; text-align: center; padding: 10px; cursor: pointer; border-radius: 8px; color: #666; font-size: 0.95rem; transition: all 0.2s; }
-        .tab.active { background: #fff; color: var(--primary); font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-
-        /* 输入控件 */
-        textarea { width: 100%; padding: 12px; border: 1px solid #e5e5ea; border-radius: 10px; resize: vertical; box-sizing: border-box; font-family: monospace; outline: none; display: block; background: #fafafa; font-size: 15px;}
-        textarea:focus { border-color: var(--primary); background: #fff; }
-        
-        input[type="password"] { width: 100%; padding: 14px; border: 1px solid #e5e5ea; border-radius: 10px; margin-top: 15px; box-sizing: border-box; -webkit-appearance: none; font-size: 16px;}
-        input[type="password"]:focus { border-color: var(--primary); }
-
-        /* 按钮组 */
-        .btn-group { display: flex; gap: 10px; margin-top: 15px; }
-        .btn { flex: 1; border: none; padding: 14px; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity 0.2s; }
-        .btn:active { opacity: 0.8; }
-        
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-success { background: var(--success); color: white; }
-        .btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
-        .btn-secondary { background: #e5e5ea; color: #333; }
-
-        /* 文件上传区 */
-        .upload-zone { border: 2px dashed #cbd5e1; border-radius: 12px; padding: 30px; text-align: center; cursor: pointer; background: #fafafa; transition: all 0.2s; }
-        .upload-zone:active { background: #f0f7ff; border-color: var(--primary); }
-        
-        /* 结果区域 */
-        .result-box { margin-top: 20px; display: none; animation: fadeIn 0.3s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        
-        /* Toast 提示框 */
-        #toast {
-            visibility: hidden; min-width: 250px; background-color: rgba(0,0,0,0.85); color: #fff; text-align: center;
-            border-radius: 50px; padding: 12px 20px; position: fixed; z-index: 999; left: 50%; bottom: 30px;
-            transform: translateX(-50%); font-size: 0.95rem; backdrop-filter: blur(5px); box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            opacity: 0; transition: opacity 0.3s, bottom 0.3s;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        #toast.show { visibility: visible; opacity: 1; bottom: 50px; }
-        #toast.error { background-color: rgba(255, 59, 48, 0.9); }
-        #toast.success { background-color: rgba(52, 199, 89, 0.9); }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            background-color: #ecf0f1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        
+        .tab.active {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        button.secondary {
+            background-color: #95a5a6;
+        }
+        
+        button.secondary:hover {
+            background-color: #7f8c8d;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+        }
+        
+        #qrcode {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        #fileInput {
+            margin-bottom: 10px;
+        }
+        
+        .file-info {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+        }
+        
+        /* Toast样式 */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .toast.success {
+            background-color: #27ae60;
+        }
+        
+        .toast.error {
+            background-color: #e74c3c;
+        }
+        
+        .toast.info {
+            background-color: #3498db;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            button {
+                width: 100%;
+            }
+            
+            .toast {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
-
-<div id="toast">提示信息</div>
-
-<div class="container">
-    <div class="card">
-        <div class="card-header">🔒 加密发送</div>
-        <div class="card-body">
-            <div class="tabs">
-                <div class="tab active" onclick="switchMode('text')">📝 纯文本</div>
-                <div class="tab" onclick="switchMode('file')">📁 文件 / 图片</div>
+    <div class="container">
+        <h1>非对称加密解密工具</h1>
+        
+        <!-- Toast元素 -->
+        <div id="toast" class="toast"></div>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="text">文本加密</div>
+            <div class="tab" data-tab="file">文件加密</div>
+        </div>
+        
+        <!-- 文本加密标签页 -->
+        <div class="tab-content active" id="text">
+            <div class="form-group">
+                <label for="password">密码（默认：2026）</label>
+                <input type="text" id="password" value="2026">
             </div>
-
-            <div id="mode-text">
-                <textarea id="plainInput" rows="5" placeholder="在此输入要加密的内容..."></textarea>
+            
+            <div class="form-group">
+                <label for="inputText">输入文本</label>
+                <textarea id="inputText" placeholder="请输入要加密或解密的文本"></textarea>
+            </div>
+            
+            <div class="button-group">
+                <button onclick="encryptText()">加密</button>
+                <button onclick="decryptText()">解密</button>
+                <button onclick="generateQR()">生成二维码</button>
+                <button onclick="copyToClipboard('outputText')" class="secondary">复制结果</button>
+            </div>
+            
+            <div class="result">
+                <h3>结果</h3>
+                <textarea id="outputText" readonly placeholder="结果将显示在这里"></textarea>
+            </div>
+            
+            <div id="qrcode">
+                <!-- 二维码将在这里生成 -->
+            </div>
+        </div>
+        
+        <!-- 文件加密标签页 -->
+        <div class="tab-content" id="file">
+            <div class="form-group">
+                <label for="filePassword">密码（默认：2026）</label>
+                <input type="text" id="filePassword" value="2026">
+            </div>
+            
+            <div class="form-group">
+                <label for="fileInput">选择文件</label>
+                <input type="file" id="fileInput">
+                <div class="file-info" id="fileInfo"></div>
+            </div>
+            
+            <div class="button-group">
+                <button onclick="encryptFile()">加密文件</button>
+                <button onclick="decryptFile()">解密文件</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <script>
+        // 标签切换功能
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // 移除所有标签的active类
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                // 添加当前标签的active类
+                tab.classList.add('active');
                 
-                <div class="result-box" id="cipherResultBox">
-                    <div style="font-size:0.9rem; color:#666; margin-bottom:5px; font-weight:bold;">加密结果 (密文)：</div>
-                    <textarea id="cipherOutput" rows="4" readonly style="background:#f4f4f5; color:#555; font-size:0.85rem; word-break:break-all;"></textarea>
-                    
-                    <div class="btn-group">
-                        <button class="btn btn-success" onclick="copyToClip()">📋 复制密文</button>
-                        <button class="btn btn-secondary" onclick="resetTextMode()">🔄 清空重置</button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="mode-file" style="display:none;">
-                <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
-                    <div style="font-size:2rem; margin-bottom:10px;">☁️</div>
-                    <div id="fileNameDisplay">点击选择文件<br><span style="font-size:0.8rem; color:#999">支持粘贴截图/拖拽</span></div>
-                </div>
-                <input type="file" id="fileInput" hidden onchange="updateFileName(this)">
-            </div>
-
-            <div id="action-area">
-                <input type="password" id="encPassword" placeholder="设置加密密码 (必填)">
-                <button class="btn btn-primary" style="width:100%; margin-top:15px;" onclick="doEncrypt()">🔒 开始加密</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header">🔓 解密接收</div>
-        <div class="card-body">
-            <div style="font-size:0.9rem; color:#666; margin-bottom:10px;">粘贴密文 或 选择文件：</div>
-            
-            <textarea id="decTextInput" rows="3" placeholder="在此粘贴 Base64 密文..."></textarea>
-            
-            <button class="btn btn-outline" style="width:100%; margin-top:10px;" onclick="document.getElementById('decFileInput').click()">
-                📂 或选择 .enc 文件
-            </button>
-            <input type="file" id="decFileInput" hidden onchange="handleDecFileSelect(this)">
-            
-            <input type="password" id="decPassword" placeholder="输入解密密码">
-            <button class="btn btn-primary" style="width:100%; margin-top:15px;" onclick="doDecrypt()">🔓 开始解密</button>
-
-            <div class="result-box" id="decResultBox" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 15px;">
-                <div style="color: #15803d; font-weight: bold; margin-bottom: 10px;">✅ 解密成功：</div>
-                <div id="decContent"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    let currentMode = 'text';
-    let fileToEncrypt = null;
-    // 辅助：给文件名添加时间戳 (格式: _YYYYMMDD_HHmmss)
-    function addTimestampToName(filename) {
-        const now = new Date();
-        const timeStr = "_" + 
-            now.getFullYear() +
-            String(now.getMonth() + 1).padStart(2, '0') +
-            String(now.getDate()).padStart(2, '0') + "_" +
-            String(now.getHours()).padStart(2, '0') +
-            String(now.getMinutes()).padStart(2, '0') +
-            String(now.getSeconds()).padStart(2, '0');
-
-        const dotIndex = filename.lastIndexOf('.');
+                // 隐藏所有内容
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                // 显示对应内容
+                const tabId = tab.dataset.tab;
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
         
-        if (dotIndex === -1) {
-            // 没有后缀名
-            return filename + timeStr;
-        } else {
-            // 插入到后缀名前
-            return filename.substring(0, dotIndex) + timeStr + filename.substring(dotIndex);
+        // Toast提示函数
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast ${type} show`;
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
         }
-    }
-    // Toast 提示工具
-    function showToast(msg, type = 'normal') {
-        const toast = document.getElementById("toast");
-        toast.textContent = msg;
-        toast.className = "show"; // 重置class
-        if (type === 'error') toast.classList.add("error");
-        if (type === 'success') toast.classList.add("success");
         
-        setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
-    }
-
-    /* --- 界面逻辑 --- */
-    function switchMode(mode) {
-        currentMode = mode;
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        const tabs = document.querySelectorAll('.tab');
+        // 生成密钥
+        let aesKey;
         
-        if (mode === 'text') {
-            tabs[0].classList.add('active');
-            document.getElementById('mode-text').style.display = 'block';
-            document.getElementById('mode-file').style.display = 'none';
-        } else {
-            tabs[1].classList.add('active');
-            document.getElementById('mode-text').style.display = 'none';
-            document.getElementById('mode-file').style.display = 'block';
+        async function generateKey(password) {
+            const encoder = new TextEncoder();
+            const passwordBuffer = encoder.encode(password);
+            
+            // 使用密码派生AES密钥
+            const keyMaterial = await window.crypto.subtle.importKey(
+                'raw',
+                passwordBuffer,
+                { name: 'PBKDF2' },
+                false,
+                ['deriveKey']
+            );
+            
+            const derivedKey = await window.crypto.subtle.deriveKey(
+                {
+                    name: 'PBKDF2',
+                    salt: passwordBuffer,
+                    iterations: 100000,
+                    hash: 'SHA-256'
+                },
+                keyMaterial,
+                {
+                    name: 'AES-GCM',
+                    length: 256
+                },
+                false,
+                ['encrypt', 'decrypt']
+            );
+            
+            aesKey = derivedKey;
+            return derivedKey;
         }
-        document.getElementById('encPassword').value = ''; 
-        document.getElementById('cipherResultBox').style.display = 'none';
-    }
-
-    function updateFileName(input) {
-        if(input.files[0]) {
-            fileToEncrypt = input.files[0];
-            document.getElementById('fileNameDisplay').innerHTML = `📄 <b>${fileToEncrypt.name}</b><br><span style="font-size:0.8rem">(${(fileToEncrypt.size/1024).toFixed(1)} KB)</span>`;
-        }
-    }
-
-    function handleDecFileSelect(input) {
-        if (input.files[0]) {
-            document.getElementById('decTextInput').value = `[已挂载文件: ${input.files[0].name}]`;
-            document.getElementById('decTextInput').disabled = true; // 锁定输入框，避免混淆
-            showToast("已选择文件，请输入密码解密");
-        }
-    }
-
-    // 全局粘贴支持
-    document.addEventListener('paste', (e) => {
-        if(e.target.type === 'password') return;
-        const items = e.clipboardData.items;
-        for (let item of items) {
-            if (item.kind === 'file') {
-                fileToEncrypt = item.getAsFile();
-                switchMode('file');
-                document.getElementById('fileNameDisplay').innerHTML = `🖼️ <b>已粘贴图片</b><br><span style="font-size:0.8rem">(${(fileToEncrypt.size/1024).toFixed(1)} KB)</span>`;
-                e.preventDefault();
-                showToast("已读取剪贴板图片");
+        
+        // 文本加密
+        async function encryptText() {
+            const inputText = document.getElementById('inputText').value;
+            const password = document.getElementById('password').value || '2026';
+            
+            if (!inputText) {
+                showToast('请输入要加密的文本', 'info');
                 return;
             }
+            
+            await generateKey(password);
+            
+            const encoder = new TextEncoder();
+            const data = encoder.encode(inputText);
+            
+            // 生成随机IV
+            const iv = window.crypto.getRandomValues(new Uint8Array(12));
+            
+            const encrypted = await window.crypto.subtle.encrypt(
+                {
+                    name: 'AES-GCM',
+                    iv: iv
+                },
+                aesKey,
+                data
+            );
+            
+            // 组合IV和加密数据
+            const result = new Uint8Array(iv.length + encrypted.byteLength);
+            result.set(iv, 0);
+            result.set(new Uint8Array(encrypted), iv.length);
+            
+            const encryptedBase64 = btoa(String.fromCharCode.apply(null, result));
+            
+            document.getElementById('outputText').value = encryptedBase64;
+            showToast('加密成功', 'success');
         }
-    });
-
-    function copyToClip() {
-        const copyText = document.getElementById("cipherOutput");
-        if(!copyText.value) return;
-        copyText.select();
-        document.execCommand("copy");
-        showToast("复制成功！快去发送吧", "success");
-    }
-
-    function resetTextMode() {
-        document.getElementById('plainInput').value = '';
-        document.getElementById('cipherOutput').value = '';
-        document.getElementById('cipherResultBox').style.display = 'none';
-        showToast("已清空");
-    }
-
-    /* --- 加密核心 --- */
-    async function doEncrypt() {
-        const pwd = document.getElementById('encPassword').value;
-        if (!pwd) return showToast("⚠️ 请先设置密码", "error");
-
-        try {
-            if (currentMode === 'text') {
-                // --- 文本模式 (逻辑不变) ---
-                const text = document.getElementById('plainInput').value;
-                if (!text) return showToast("请输入要加密的文字", "error");
-
-                const data = new TextEncoder().encode(text);
-                const { combined } = await encryptData(data, pwd);
-                const base64Str = arrayBufferToBase64(combined);
-                
-                document.getElementById('cipherResultBox').style.display = 'block';
-                document.getElementById('cipherOutput').value = base64Str;
-                
-                document.getElementById('cipherResultBox').scrollIntoView({behavior: "smooth"});
-                showToast("加密成功！请复制密文", "success");
-
-            } else {
-                // --- 文件模式 (修改了文件名逻辑) ---
-                if (!fileToEncrypt) return showToast("请先选择文件", "error");
-                
-                const data = await fileToEncrypt.arrayBuffer();
-                const { combined } = await encryptData(data, pwd);
-                
-                const blob = new Blob([combined]);
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                
-                // 【修改核心】：原始文件名 -> 加时间戳 -> 加 .enc 后缀
-                // 结果示例：image_20240321_123055.png.enc
-                const nameWithTime = addTimestampToName(fileToEncrypt.name);
-                link.download = nameWithTime + ".enc";
-                
-                document.body.appendChild(link); // 兼容性更好
-                link.click();
-                document.body.removeChild(link);
-                
-                showToast("加密文件已开始下载", "success");
-            }
-        } catch (e) {
-            console.error(e);
-            showToast("加密过程出错", "error");
-        }
-    }
-
-    /* --- 解密核心 --- */
-    async function doDecrypt() {
-        const pwd = document.getElementById('decPassword').value;
-        if (!pwd) return showToast("请输入解密密码", "error");
-
-        const textInput = document.getElementById('decTextInput');
-        const fileInput = document.getElementById('decFileInput');
-
-        try {
-            let combinedBuffer;
-            let originalName = 'unknown';
-            let isFile = false;
-
-            // 逻辑判断：是解密文件，还是解密文本框？
-            if (fileInput.files.length > 0 && textInput.disabled) {
-                originalName = fileInput.files[0].name.replace(/\.enc$/, '');
-                combinedBuffer = await fileInput.files[0].arrayBuffer();
-                isFile = true;
-            } else {
-                const val = textInput.value.trim();
-                if (!val) return showToast("请粘贴密文或选择文件", "error");
-                if (val.startsWith('[已挂载')) return showToast("文件状态异常，请重新选择", "error");
-                combinedBuffer = base64ToArrayBuffer(val);
-            }
-
-            const decryptedData = await decryptData(combinedBuffer, pwd);
-
-            // 显示区域
-            const resultBox = document.getElementById('decResultBox');
-            const contentDiv = document.getElementById('decContent');
-            resultBox.style.display = 'block';
-            contentDiv.innerHTML = ''; 
-
-            if (!isFile) {
-                const text = new TextDecoder().decode(decryptedData);
-                // 使用 Textarea 防止注入 + 方便阅读
-                const out = document.createElement('textarea');
-                out.value = text;
-                out.rows = 6;
-                out.style.width = '100%';
-                out.style.border = '1px solid #ddd';
-                out.style.borderRadius = '8px';
-                out.style.padding = '10px';
-                out.style.background = '#fff';
-                out.readOnly = true;
-                contentDiv.appendChild(out);
-                
-                // 添加“复制明文”按钮
-                const copyBtn = document.createElement('button');
-                copyBtn.className = 'btn btn-success';
-                copyBtn.style.marginTop = '10px';
-                copyBtn.innerText = '📋 复制明文';
-                copyBtn.onclick = function() {
-                    out.select();
-                    document.execCommand('copy');
-                    showToast("明文已复制", "success");
-                };
-                contentDiv.appendChild(copyBtn);
-
-            } else {
-                let type = 'application/octet-stream';
-                if (/\.(png|jpg|jpeg|gif)$/i.test(originalName)) type = 'image/png';
-                
-                const blob = new Blob([decryptedData], {type: type});
-                const url = URL.createObjectURL(blob);
-
-                if (type.startsWith('image')) {
-                    const img = document.createElement('img');
-                    img.src = url;
-                    img.style.maxWidth = '100%';
-                    img.style.borderRadius = '8px';
-                    contentDiv.appendChild(img);
-                }
-                
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = originalName;
-                link.innerHTML = `<div style="background:#fff; padding:15px; border-radius:10px; border:1px solid #ddd; margin-top:10px; text-align:center; font-weight:bold; color:var(--primary)">⬇️ 点击下载还原文件<br><span style="font-size:0.8rem; font-weight:normal; color:#666">${originalName}</span></div>`;
-                link.style.textDecoration = 'none';
-                contentDiv.appendChild(link);
+        
+        // 文本解密
+        async function decryptText() {
+            const encryptedText = document.getElementById('inputText').value;
+            const password = document.getElementById('password').value || '2026';
+            
+            if (!encryptedText) {
+                showToast('请输入要解密的文本', 'info');
+                return;
             }
             
-            showToast("解密成功！", "success");
-            resultBox.scrollIntoView({behavior: "smooth"});
-
-        } catch (e) {
-            console.error(e);
-            showToast("解密失败：密码错误或数据损坏", "error");
+            await generateKey(password);
+            
+            const encryptedArray = new Uint8Array(atob(encryptedText).split('').map(char => char.charCodeAt(0)));
+            
+            // 提取IV和加密数据
+            const iv = encryptedArray.slice(0, 12);
+            const encryptedData = encryptedArray.slice(12);
+            
+            try {
+                const decrypted = await window.crypto.subtle.decrypt(
+                    {
+                        name: 'AES-GCM',
+                        iv: iv
+                    },
+                    aesKey,
+                    encryptedData
+                );
+                
+                const decoder = new TextDecoder();
+                const decryptedText = decoder.decode(decrypted);
+                
+                document.getElementById('outputText').value = decryptedText;
+                showToast('解密成功', 'success');
+            } catch (e) {
+                showToast('解密失败，请检查密码是否正确', 'error');
+            }
         }
-    }
-
-    /* --- 加密算法 (AES-GCM + Salt) --- */
-    async function encryptData(dataBuffer, password) {
-        const iv = window.crypto.getRandomValues(new Uint8Array(12));
-        const salt = window.crypto.getRandomValues(new Uint8Array(16));
-        const key = await generateKey(password, salt);
-        const encrypted = await window.crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, key, dataBuffer);
-        const combined = new Uint8Array(16 + 12 + encrypted.byteLength);
-        combined.set(salt, 0);
-        combined.set(iv, 16);
-        combined.set(new Uint8Array(encrypted), 28);
-        return { combined };
-    }
-
-    async function decryptData(combinedBuffer, password) {
-        const salt = combinedBuffer.slice(0, 16);
-        const iv = combinedBuffer.slice(16, 28);
-        const data = combinedBuffer.slice(28);
-        const key = await generateKey(password, salt);
-        return await window.crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, key, data);
-    }
-
-    async function generateKey(password, salt) {
-        const enc = new TextEncoder();
-        const keyMaterial = await window.crypto.subtle.importKey("raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]);
-        return window.crypto.subtle.deriveKey({ name: "PBKDF2", salt: salt, iterations: 100000, hash: "SHA-256" }, keyMaterial, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
-    }
-
-    function arrayBufferToBase64(buffer) {
-        let binary = '';
-        const bytes = new Uint8Array(buffer);
-        for (let i = 0; i < bytes.byteLength; i++) binary += String.fromCharCode(bytes[i]);
-        return window.btoa(binary);
-    }
-
-    function base64ToArrayBuffer(base64) {
-        const binary_string = window.atob(base64.replace(/\s/g, ''));
-        const len = binary_string.length;
-        const bytes = new Uint8Array(len);
-        for (let i = 0; i < len; i++) bytes[i] = binary_string.charCodeAt(i);
-        return bytes.buffer;
-    }
-
-
-</script>
+        
+        // 生成二维码
+        function generateQR() {
+            const encryptedText = document.getElementById('outputText').value;
+            
+            if (!encryptedText) {
+                showToast('请先加密文本', 'info');
+                return;
+            }
+            
+            const qrcodeDiv = document.getElementById('qrcode');
+            qrcodeDiv.innerHTML = '';
+            
+            // 创建canvas元素
+            const canvas = document.createElement('canvas');
+            qrcodeDiv.appendChild(canvas);
+            
+            QRCode.toCanvas(canvas, encryptedText, {
+                width: 200,
+                margin: 1
+            }, function (error) {
+                if (error) {
+                    console.error(error);
+                    showToast('二维码生成失败', 'error');
+                } else {
+                    showToast('二维码生成成功', 'success');
+                }
+            });
+        }
+        
+        // 复制到剪贴板
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            element.select();
+            document.execCommand('copy');
+            showToast('已复制到剪贴板', 'success');
+        }
+        
+        // 加密文件
+        async function encryptFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            const password = document.getElementById('filePassword').value || '2026';
+            
+            if (!file) {
+                showToast('请选择要加密的文件', 'info');
+                return;
+            }
+            
+            await generateKey(password);
+            
+            const reader = new FileReader();
+            reader.onload = async function(e) {
+                const fileData = e.target.result;
+                const data = new Uint8Array(fileData);
+                
+                try {
+                    // 生成随机IV
+                    const iv = window.crypto.getRandomValues(new Uint8Array(12));
+                    
+                    const encrypted = await window.crypto.subtle.encrypt(
+                        {
+                            name: 'AES-GCM',
+                            iv: iv
+                        },
+                        aesKey,
+                        data
+                    );
+                    
+                    // 组合IV和加密数据
+                    const result = new Uint8Array(iv.length + encrypted.byteLength);
+                    result.set(iv, 0);
+                    result.set(new Uint8Array(encrypted), iv.length);
+                    
+                    const encryptedBlob = new Blob([result], { type: 'application/octet-stream' });
+                    const url = URL.createObjectURL(encryptedBlob);
+                    
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = file.name + '.encrypted';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    showToast('文件加密成功', 'success');
+                } catch (e) {
+                    showToast('文件加密失败', 'error');
+                    console.error(e);
+                }
+            };
+            reader.readAsArrayBuffer(file);
+        }
+        
+        // 解密文件
+        async function decryptFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            const password = document.getElementById('filePassword').value || '2026';
+            
+            if (!file) {
+                showToast('请选择要解密的文件', 'info');
+                return;
+            }
+            
+            await generateKey(password);
+            
+            const reader = new FileReader();
+            reader.onload = async function(e) {
+                const fileData = e.target.result;
+                const data = new Uint8Array(fileData);
+                
+                try {
+                    // 提取IV和加密数据
+                    const iv = data.slice(0, 12);
+                    const encryptedData = data.slice(12);
+                    
+                    const decrypted = await window.crypto.subtle.decrypt(
+                        {
+                            name: 'AES-GCM',
+                            iv: iv
+                        },
+                        aesKey,
+                        encryptedData
+                    );
+                    
+                    const decryptedBlob = new Blob([decrypted]);
+                    const url = URL.createObjectURL(decryptedBlob);
+                    
+                    const fileName = file.name.replace('.encrypted', '');
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = fileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    showToast('文件解密成功', 'success');
+                } catch (e) {
+                    showToast('文件解密失败，请检查密码是否正确', 'error');
+                    console.error(e);
+                }
+            };
+            reader.readAsArrayBuffer(file);
+        }
+        
+        // 显示文件信息
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const fileInfo = document.getElementById('fileInfo');
+                fileInfo.innerHTML = `
+                    <p>文件名: ${file.name}</p>
+                    <p>大小: ${(file.size / 1024).toFixed(2)} KB</p>
+                    <p>类型: ${file.type || '未知'}</p>
+                `;
+            }
+        });
+    </script>
 </body>
 </html>
