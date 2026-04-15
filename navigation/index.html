@@ -19,17 +19,21 @@
   <meta name="author" content="Harrison">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="标签 - 摄影">
-<meta property="og:url" content="https://blog.qfmy.vip/tags/%E6%91%84%E5%BD%B1/">
+    <meta name="description" content="&#x2F;**  * 🛠️ 懒人维护区：只需修改这个 navData 数组即可  * 每一个 {} 代表一个卡片，每一个 category 代表一个分类  *&#x2F; const navData &#x3D; [   {     category: &quot;🚀 AI 工具&quot;,     items: [       { name: &quot;DeepSeek&quot;, link: &quot;https:&#x2F;&#x2F;www.deepseek.com&#x2F;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="导航页">
+<meta property="og:url" content="https://blog.qfmy.vip/navigation/">
 <meta property="og:site_name" content="盒里森活">
+<meta property="og:description" content="&#x2F;**  * 🛠️ 懒人维护区：只需修改这个 navData 数组即可  * 每一个 {} 代表一个卡片，每一个 category 代表一个分类  *&#x2F; const navData &#x3D; [   {     category: &quot;🚀 AI 工具&quot;,     items: [       { name: &quot;DeepSeek&quot;, link: &quot;https:&#x2F;&#x2F;www.deepseek.com&#x2F;">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-04-15T13:51:59.526Z">
+<meta property="article:modified_time" content="2026-04-15T13:51:59.526Z">
 <meta property="article:author" content="Harrison">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>标签 - 摄影 - 盒里森活</title>
+  <title>导航页 - 盒里森活</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -83,7 +87,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 80vh;">
+<div class="header-inner" style="height: 60vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -213,17 +217,13 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="标签 - 摄影"></span>
+            <span id="subtitle" data-typed-text="导航页"></span>
           
         </div>
 
         
       </div>
 
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
       
     </div>
   </div>
@@ -244,23 +244,160 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 1 篇文章</p>
-  <hr>
-  
-  
-    
-      
-      <p class="h5">2025</p>
-    
-    <a href="/escape-office-spring2025-photo/" class="list-group-item list-group-item-action">
-      <time>03-18</time>
-      <div class="list-group-item-title">『逃离办公室の25春』📸</div>
-    </a>
-  
-</div>
+<article class="page-content">
+  <div id="nav-app"></div>
 
+<script>
+/**
+ * 🛠️ 懒人维护区：只需修改这个 navData 数组即可
+ * 每一个 {} 代表一个卡片，每一个 category 代表一个分类
+ */
+const navData = [
+  {
+    category: "🚀 AI 工具",
+    items: [
+      { name: "DeepSeek", link: "https://www.deepseek.com/", desc: "强大的国产大模型，响应极快" },
+      { name: "Gemini", link: "https://gemini.google.com/", desc: "Google 的多模态 AI，集成 Google 生态" },
+      { name: "ChatGPT", link: "https://chatgpt.com/", desc: "OpenAI 旗下的行业标杆" }
+    ]
+  },
+  {
+    category: "📦 常用工具 & 存储",
+    items: [
+      { name: "百度网盘", link: "https://pan.baidu.com/", desc: "国内常用的资源存储地" },
+      { name: "坚果云", link: "https://www.jianguoyun.com/", desc: "同步办公首选，专业稳定" },
+      { name: "GitHub", link: "https://github.com/", desc: "全球最大的开源代码托管平台" }
+    ]
+  },
+  {
+    category: "🎨 资源站",
+    items: [
+      { name: "Unsplash", link: "https://unsplash.com/", desc: "高品质免费无版权图片库" },
+      { name: "Iconfont", link: "https://www.iconfont.cn/", desc: "阿里巴巴矢量图标库" }
+    ]
+  }
+];
 
+// -------------------------------------------------------------
+// ⚙️ 自动化渲染引擎（写一次，终身免维护）
+// -------------------------------------------------------------
+function renderNav(data) {
+  const container = document.getElementById('nav-app');
+  if (!container) return;
+
+  const html = data.map(group => `
+    <div class="nav-section">
+      <h2 class="nav-title">${group.category}</h2>
+      <div class="nav-grid">
+        ${group.items.map(item => `
+          <a href="${item.link}" target="_blank" class="nav-card-wrapper">
+            <div class="nav-card">
+              <div class="nav-name">${item.name}</div>
+              <div class="nav-desc">${item.desc}</div>
+            </div>
+          </a>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  container.innerHTML = html;
+}
+
+// 确保在页面加载后执行
+document.addEventListener('DOMContentLoaded', () => renderNav(navData));
+// 针对部分 Hexo 主题切换页面不刷新的情况，立即执行一次
+renderNav(navData);
+</script>
+
+<style>
+/* -------------------------------------------------------------
+ * 🎨 视觉样式（Rounded 风格 + Fluid 主题适配）
+ * ------------------------------------------------------------- */
+:root {
+  --primary-color: #3291ff;
+}
+
+.nav-section {
+  margin-bottom: 3rem;
+}
+
+.nav-title {
+  margin: 1.5rem 0 1.2rem !important;
+  font-weight: 700 !important;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  border-bottom: none !important;
+}
+
+/* 标题左侧的小圆柱装饰 */
+.nav-title::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 1.2rem;
+  background: var(--primary-color);
+  margin-right: 12px;
+  border-radius: 10px;
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.nav-card-wrapper {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Rounded 圆角卡片设计 */
+.nav-card {
+  height: 100%;
+  padding: 1.25rem;
+  background-color: var(--board-bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px; /* 舒适的大圆角 */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.nav-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 6px;
+}
+
+.nav-desc {
+  font-size: 0.85rem;
+  color: var(--sec-text-color);
+  line-height: 1.5;
+  /* 限制描述最多显示两行 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 深色模式微调 */
+[data-user-color-scheme='dark'] .nav-card {
+  border-color: rgba(255, 255, 255, 0.1);
+  background-color: #2c313c;
+}
+</style>
+
+  
+
+</article>
 
 
 
