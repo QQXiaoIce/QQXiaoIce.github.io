@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>赛博清单 Vol-04</title>
-    <link href="/cyber-checklist-vol-04/"/>
-    <url>/cyber-checklist-vol-04/</url>
+    <title>赛博清单 Vol-05</title>
+    <link href="/cyber-checklist-vol-05/"/>
+    <url>/cyber-checklist-vol-05/</url>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="KeymouseGo-类按键精灵工具"><a href="#KeymouseGo-类按键精灵工具" class="headerlink" title="KeymouseGo - 类按键精灵工具"></a>KeymouseGo - 类按键精灵工具</h3><p>功能：记录用户的鼠标键盘操作，通过触发按钮自动执行之前记录的操作，可设定执行的次数，可以理解为 <code>精简绿色版</code> 的 <code>按键精灵</code>。</p><p>用途：在进行某些操作简单、单调重复的工作时，使用本软件就可以很省力了。自己只要做一遍，然后接下来就让电脑来做。</p><p>GitHub地址：<a href="https://github.com/taojy123/KeymouseGo">https://github.com/taojy123/KeymouseGo</a></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="CompactGUI-游戏-程序透明压缩工具"><a href="#CompactGUI-游戏-程序透明压缩工具" class="headerlink" title="CompactGUI - 游戏&#x2F;程序透明压缩工具"></a>CompactGUI - 游戏&#x2F;程序透明压缩工具</h3><p>CompactGUI 调用 Windows 10 原生 <code>compact.exe</code> 接口，对游戏&#x2F;程序文件夹执行透明压缩。压缩后的文件以压缩形态存储于磁盘，运行时由系统实时解压，程序行为与压缩前完全一致。</p><p>压缩率因文件类型而异，文本类游戏（如《Ark》）可压缩至原体积的 50% 左右，exe&#x2F;dll 为主的程序效果稍弱。CPU 占用极低，2010 年后的处理器均可流畅运行。</p><p>支持右键菜单呼出、压缩进度可视化、社区压缩率查询。Windows 11 DirectStorage 游戏不适用。</p><p>GitHub地址：<a href="https://github.com/IridiumIO/CompactGUI">https://github.com/IridiumIO/CompactGUI</a></p>]]></content>
     
     
     <categories>
@@ -22,7 +22,36 @@
       
       <tag>效率工具</tag>
       
-      <tag>开源</tag>
+      <tag>开源软件</tag>
+      
+      <tag>Windows</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>赛博清单 Vol-04</title>
+    <link href="/cyber-checklist-vol-04/"/>
+    <url>/cyber-checklist-vol-04/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="KeymouseGo-类按键精灵工具"><a href="#KeymouseGo-类按键精灵工具" class="headerlink" title="KeymouseGo - 类按键精灵工具"></a>KeymouseGo - 类按键精灵工具</h3><p>功能：记录用户的鼠标键盘操作，通过触发按钮自动执行之前记录的操作，可设定执行的次数，可以理解为 <code>精简绿色版</code> 的 <code>按键精灵</code>。</p><p>用途：在进行某些操作简单、单调重复的工作时，使用本软件就可以很省力了。自己只要做一遍，然后接下来就让电脑来做。</p><p>GitHub地址：<a href="https://github.com/taojy123/KeymouseGo">https://github.com/taojy123/KeymouseGo</a></p><hr><h3 id="vocal-separate-音乐人声分离工具"><a href="#vocal-separate-音乐人声分离工具" class="headerlink" title="vocal-separate - 音乐人声分离工具"></a>vocal-separate - 音乐人声分离工具</h3><p>这是一个极简的人声和背景音乐分离工具，本地化网页操作，无需连接外网，使用 2stems&#x2F;4stems&#x2F;5stems 模型。</p><p>将一首歌曲或者含有背景音乐的音视频文件，拖拽到本地网页中，即可将其中的人声和音乐声分离为单独的音频wav文件，可选单独分离“钢琴声”、“贝斯声”、“鼓声”等</p><p>自动调用本地浏览器打开本地网页，模型已内置，无需连接外网下载。</p><p>支持视频(mp4&#x2F;mov&#x2F;mkv&#x2F;avi&#x2F;mpeg)和音频(mp3&#x2F;wav)格式</p><p>只需点两下鼠标，一选择音视频文件，二启动处理。</p><p>Github地址：<a href="https://github.com/jianchang512/vocal-separate">https://github.com/jianchang512/vocal-separate</a></p><hr><h3 id="Mouser-Logitech-Options-替代品"><a href="#Mouser-Logitech-Options-替代品" class="headerlink" title="Mouser - Logitech Options+ 替代品"></a>Mouser - Logitech Options+ 替代品</h3><p>一个轻量、开源、<strong>完全本地运行</strong> 的 <strong>Logitech Options+</strong> 替代品，用于对罗技 HID++ 鼠标进行按键&#x2F;手势重映射。当前对 <strong>MX Master</strong> 系列体验最佳，同时也对更多罗技型号提供早期识别与通用回退 UI。</p><p>无需云端、无需罗技账号、纯本地运行。</p><p>Github地址：<a href="https://github.com/TomBadash/Mouser">https://github.com/TomBadash/Mouser</a></p><hr><h3 id="Logi-Options-Plus-Mini-自定义-Logi-Options"><a href="#Logi-Options-Plus-Mini-自定义-Logi-Options" class="headerlink" title="Logi Options Plus Mini - 自定义 Logi Options+"></a>Logi Options Plus Mini - 自定义 Logi Options+</h3><p><strong>Logi Options+ mini</strong> 提供了一种选择来自定义 Logi Options+，方便用户能够更好地控制其功能。</p><p>项目通过官方安装包命令行选项定制化Logi Options+功能。 支持macOS原生应用、macOS Shell、Windows PowerShell。</p><p>Github地址：<a href="https://github.com/Qetesh/logi-options-plus-mini">https://github.com/Qetesh/logi-options-plus-mini</a></p><hr><h3 id="Cassotis-IME（言泉输入法）-免费开源无广告的输入法"><a href="#Cassotis-IME（言泉输入法）-免费开源无广告的输入法" class="headerlink" title="Cassotis IME（言泉输入法） - 免费开源无广告的输入法"></a>Cassotis IME（言泉输入法） - 免费开源无广告的输入法</h3><p>Cassotis IME（言泉输入法）是一个面向 Windows 10&#x2F;11 的实验性中文拼音输入法项目，主要使用 Delphi，并基于 TSF（Text Services Framework）实现。</p><p>Github地址：<a href="https://github.com/shenmin/cassotis-ime">https://github.com/shenmin/cassotis-ime</a></p><hr><h3 id="MicYou-给电脑共享手机麦克风"><a href="#MicYou-给电脑共享手机麦克风" class="headerlink" title="MicYou - 给电脑共享手机麦克风"></a>MicYou - 给电脑共享手机麦克风</h3><p>MicYou 是一款开源的跨平台工具，旨在将你的 Android 设备转化为电脑的高质量无线麦克风。它通过多种连接方式将移动设备的音频流传输至 PC 端，并配合虚拟声卡驱动实现系统级的音频输入。</p><p>Github地址：<a href="https://github.com/LanRhyme/MicYou">https://github.com/LanRhyme/MicYou</a></p><hr><h3 id="AirMouse-电脑的手机虚拟外设"><a href="#AirMouse-电脑的手机虚拟外设" class="headerlink" title="AirMouse - 电脑的手机虚拟外设"></a>AirMouse - 电脑的手机虚拟外设</h3><p>这是一个基于 Python 后端的轻量级远程控制工具，可将移动设备（Android&#x2F;iOS）转化为电脑的：触控板、键盘、语音输入工具、宏按键面板。</p><p>Github地址：<a href="https://github.com/cornradio/AirMouse">https://github.com/cornradio/AirMouse</a></p><hr><h3 id="Spacedesk-屏幕扩展与镜像工具"><a href="#Spacedesk-屏幕扩展与镜像工具" class="headerlink" title="Spacedesk - 屏幕扩展与镜像工具"></a>Spacedesk - 屏幕扩展与镜像工具</h3><p>spacedesk 是一款老牌且高效的屏幕扩展软件，旨在将你的手机、平板或旧电脑转变为 Windows 主机的第二块显示器。它通过局域网（Wi-Fi 或 LAN）实现低延迟的画面传输，支持多设备同时连接，让你无需额外购买硬件即可轻松组建多屏协同工作环境。</p><p>官网地址：<a href="https://www.spacedesk.net/">https://www.spacedesk.net/</a></p><hr><h3 id="AudioRelay-局域网音频无线传输工具"><a href="#AudioRelay-局域网音频无线传输工具" class="headerlink" title="AudioRelay - 局域网音频无线传输工具"></a>AudioRelay - 局域网音频无线传输工具</h3><p>AudioRelay 是一款专注于音频同步的实用软件，可以将电脑发出的声音通过局域网实时传输到手机或其他电脑上播放。它常用于替代损坏的音箱或长距离音频线，支持将手机变为无线耳机接收端，并提供调节延迟和比特率的选项以适应不同的网络环境。</p><p>官网地址：<a href="https://audiorelay.net/">https://audiorelay.net/</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>工具推荐</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>效率工具</tag>
+      
+      <tag>开源软件</tag>
       
     </tags>
     
