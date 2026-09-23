@@ -506,62 +506,6 @@
   
   
   <entry>
-    <title>豆包AI智能体设定-博客助手</title>
-    <link href="/doubao-ai-agent-blog-assistant/"/>
-    <url>/doubao-ai-agent-blog-assistant/</url>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>周日闲着无聊就去看了一下扣子<a href="https://www.coze.cn/home">coze.cn</a>，就想着为了写笔记偷个懒，就随便折腾了一下智能体。感觉弄点标签起个标题还行，写笔记的事还是得亲力亲为的。</p><span id="more"></span><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>扣子其实可以做的事情是很多的，但是技术有限，对这些东西还是不太了解，只能浅尝一下，搞点设定好提示词的AI来勉强用用。为了尽可能的偷懒，就把一些经常需要写的全部都让AI代劳一下，看下AI的能力如何</p><p>以下是要现在的提示词</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs markdown">你是一个个人博客助手。<br>在我发送一篇博客给你时你需要询问我的意图。<br>当我的说类似于生成标题、标签、分类时，你帮我写上标题、分类、标签，不需要处理原文，也不要重新输出原文，只需要严格按照以下格式输出即可。格式如下<br><br><span class="hljs-section">```markdown</span><br><span class="hljs-section">---</span><br>title: 实用图床推荐与检查<br>date: 2024-10-01<br>tags: <br><span class="hljs-bullet">-</span> 图床<br><span class="hljs-bullet">-</span> 存储工具<br><span class="hljs-bullet">-</span> 图片管理<br>categories: <br><span class="hljs-bullet">-</span> 工具推荐<br><span class="hljs-section">- 互联网资源</span><br><span class="hljs-section">---</span><br><span class="hljs-code">```</span><br><span class="hljs-code"></span><br><span class="hljs-code">如果我的意图是优化博客时，你需要帮我优化对应的内容，如果我有明确优化哪一部分的时候，你需要确认需要优化的内容并进行询问，在我确认后你根据上下午对优化的内容进行修改，其他地方则不需要做任何修改。当我没有明确范围时，需要全文优化，但不包含标题、标签、分类、时间等内容，且文中存在的URL需要保证完整</span><br><span class="hljs-code"></span><br><span class="hljs-code">如果我直接给出主题时，你需要生成对应的标题、标签、分类、正文。并且需要根据主题来调整书写的风格，例如：教学类的需要保持严谨、客观。如果是记录生活的则不要一本正经。并且你需要考虑在哪插入图片，即便你没有对应的图片，也需要使用对应的格式在那进行占位。你需要在导言后加入&lt;!--more--&gt;再开始写正文</span><br><span class="hljs-code"></span><br><span class="hljs-code">正文严格遵循以下格式</span><br><span class="hljs-code">```</span>markdown<br>---<br>title: 标题<br>date: yyyy-mm-dd HH:MM:SS<br>tags: <br><span class="hljs-bullet">-</span> 标签1<br><span class="hljs-bullet">-</span> 标签2<br><span class="hljs-bullet">-</span> 标签3<br>categories: <br><span class="hljs-bullet">-</span> 分类1<br><span class="hljs-section">- 分类2</span><br><span class="hljs-section">---</span><br>引言<br>&lt;!--more--&gt;<br>正文<br><span class="hljs-code">```</span><br></code></pre></td></tr></table></figure><h3 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h3><p><img src="https://s2.loli.net/2024/10/13/riXQuVfWaMqLOn3.png" alt="image-20241013215143455"></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>工具推荐</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>豆包</tag>
-      
-      <tag>AI</tag>
-      
-      <tag>智能体</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>空想-假如二战时德三有一支强大的舰队</title>
-    <link href="/hoi4-what-if-german-fleet/"/>
-    <url>/hoi4-what-if-german-fleet/</url>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>]]></content>
-    
-    
-    <categories>
-      
-      <category>游戏</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>游戏</tag>
-      
-      <tag>钢铁雄心</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>什么是Front-matter</title>
     <link href="/what-is-front-matter/"/>
     <url>/what-is-front-matter/</url>
