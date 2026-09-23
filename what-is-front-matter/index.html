@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          1.5k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          12 分钟
+          13 分钟
         
       </span>
     
@@ -394,11 +394,18 @@
 <h3 id="Hexo-里要注意的地方"><a href="#Hexo-里要注意的地方" class="headerlink" title="Hexo 里要注意的地方"></a>Hexo 里要注意的地方</h3><p>这些是 Hexo 特有的，别的平台不一定通用：</p>
 <p><strong>1. <code>date</code> 基本等于必填</strong></p>
 <p>没有 <code>date</code> 的话，Hexo 会拿文件的创建时间来兜底，但换台机器、重新 clone 一次，排序就全乱了。老老实实写上。</p>
-<p><strong>2. 多个 <code>categories</code> 是层级关系，不是并列</strong></p>
-<p>这点特别容易踩。写两个分类：</p>
+<p><strong>2. 平铺的 <code>categories</code> 是层级关系，不是并列</strong></p>
+<p>这点我踩过。这样写两个分类：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">技术教程</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Node.js</span><br></code></pre></td></tr></table></figure>
 
-<p>Hexo 会理解成**「技术教程」下的「Node.js」子分类**，生成的路径是 <code>/categories/技术教程/Node.js/</code>。想要并列的多个分类，得写多个块或者用平级写法。想清楚再用。</p>
+<p>Hexo 会理解成**「技术教程」下的「Node.js」子分类**，生成的路径只有 <code>/categories/技术教程/Node.js/</code>，而不存在独立的 <code>/categories/Node.js/</code>。也就是说 Node.js 这个分类本身是点不进去的。</p>
+<p><strong>想要并列的多个分类，得写成嵌套数组</strong>——每个分类单独用一个方括号包起来：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span><br>  <span class="hljs-bullet">-</span> [<span class="hljs-string">技术教程</span>]<br>  <span class="hljs-bullet">-</span> [<span class="hljs-string">Node.js</span>]<br></code></pre></td></tr></table></figure>
+
+<p>这样两个都是顶层分类，各自生成 <code>/categories/技术教程/</code> 和 <code>/categories/Node.js/</code>，文章同时挂在两边。（这个写法我实测过，确认有效。）</p>
+<p>想表达真正的父子层级时，反过来把两级写进同一个方括号即可：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span><br>  <span class="hljs-bullet">-</span> [<span class="hljs-string">技术教程</span>, <span class="hljs-string">Node.js</span>]<br></code></pre></td></tr></table></figure>
+
 <p><strong>3. <code>permalink</code> 结尾带不带 <code>/</code> 都行，但要统一</strong></p>
 <p>我早期的文章是 <code>permalink: wallhaven-web-crawler-guide</code>（不带斜杠），后来统一成了 <code>/wallhaven-web-crawler-guide/</code>（带斜杠）。两种都能用，但<strong>别混着来</strong>，改来改去会让已发布的链接失效，SEO 也跟着掉。</p>
 <p><strong>4. <code>layout</code> 决定用哪个模板</strong></p>
