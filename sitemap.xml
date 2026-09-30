@@ -74,15 +74,6 @@
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/python/sys-argv-introduction/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.qfmy.vip/cyber-checklist-vol-02/</loc>
     
     <lastmod>2026-09-30</lastmod>
@@ -101,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/python/argparse-advanced/</loc>
+    <loc>https://blog.qfmy.vip/python/sys-argv-introduction/</loc>
     
     <lastmod>2026-09-30</lastmod>
     
@@ -111,6 +102,15 @@
   
   <url>
     <loc>https://blog.qfmy.vip/cyber-checklist-vol-04/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/python/argparse-advanced/</loc>
     
     <lastmod>2026-09-30</lastmod>
     
@@ -191,15 +191,6 @@
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/switch-npm-mirror-easy/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.qfmy.vip/pip-slow-fix-china-mirrors-guide/</loc>
     
     <lastmod>2026-09-30</lastmod>
@@ -209,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/qq-music-ad-free-version/</loc>
+    <loc>https://blog.qfmy.vip/switch-npm-mirror-easy/</loc>
     
     <lastmod>2026-09-30</lastmod>
     
@@ -219,6 +210,15 @@
   
   <url>
     <loc>https://blog.qfmy.vip/cyber-checklist-vol-01/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/qq-music-ad-free-version/</loc>
     
     <lastmod>2026-09-30</lastmod>
     
@@ -245,6 +245,27 @@
 
   
   <url>
+    <loc>https://blog.qfmy.vip/tags/%E5%9B%BE%E5%BA%8A/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/tags/%E5%9B%BE%E7%89%87%E5%AD%98%E5%82%A8/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/tags/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.qfmy.vip/tags/Front-matter/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -267,27 +288,6 @@
   
   <url>
     <loc>https://blog.qfmy.vip/tags/YAML/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/tags/%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/tags/%E5%9B%BE%E7%89%87%E5%AD%98%E5%82%A8/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/tags/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -427,6 +427,20 @@
   </url>
   
   <url>
+    <loc>https://blog.qfmy.vip/tags/pip/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/tags/%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.qfmy.vip/tags/npm/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -449,48 +463,6 @@
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/tags/pip/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/tags/%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/tags/QQ%E9%9F%B3%E4%B9%90/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/tags/sys-%E6%A8%A1%E5%9D%97/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -575,6 +547,34 @@
   
   <url>
     <loc>https://blog.qfmy.vip/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/tags/QQ%E9%9F%B3%E4%B9%90/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/tags/sys-%E6%A8%A1%E5%9D%97/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -681,14 +681,14 @@
 
   
   <url>
-    <loc>https://blog.qfmy.vip/categories/Hexo%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://blog.qfmy.vip/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</loc>
+    <loc>https://blog.qfmy.vip/categories/Hexo%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -723,14 +723,14 @@
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/categories/Python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://blog.qfmy.vip/categories/Termux/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/categories/Termux/</loc>
+    <loc>https://blog.qfmy.vip/categories/Python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -744,7 +744,7 @@
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/categories/Node-js/</loc>
+    <loc>https://blog.qfmy.vip/categories/Python/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -758,7 +758,7 @@
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/categories/Python/</loc>
+    <loc>https://blog.qfmy.vip/categories/Node-js/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
