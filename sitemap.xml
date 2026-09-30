@@ -2,6 +2,96 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.qfmy.vip/shi-guang-01/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/shi-yin-01/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/about</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/music/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/navigation/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/hexo-encrypt-tutorial/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/switch-npm-mirror-easy/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/pip-slow-fix-china-mirrors-guide/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/qq-music-ad-free-version/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/cyber-checklist-vol-01/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.qfmy.vip/cyber-checklist-vol-02/</loc>
     
     <lastmod>2026-09-30</lastmod>
@@ -65,51 +155,6 @@
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/shi-guang-01/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/shi-yin-01/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/about</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/music</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/navigation/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.qfmy.vip/image-hosting-recommendations/</loc>
     
     <lastmod>2026-09-30</lastmod>
@@ -147,51 +192,6 @@
   
   <url>
     <loc>https://blog.qfmy.vip/meingjs-hexo-audio-plugin/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/hexo-encrypt-tutorial/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/switch-npm-mirror-easy/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/pip-slow-fix-china-mirrors-guide/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/qq-music-ad-free-version/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/cyber-checklist-vol-01/</loc>
     
     <lastmod>2026-09-30</lastmod>
     
@@ -696,14 +696,14 @@
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/categories/Python/</loc>
+    <loc>https://blog.qfmy.vip/categories/%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/categories/%E9%9F%B3%E4%B9%90/</loc>
+    <loc>https://blog.qfmy.vip/categories/Python/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
