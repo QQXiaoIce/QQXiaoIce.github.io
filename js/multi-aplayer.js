@@ -52,21 +52,31 @@
       box.dataset.loaded = '1';
 
       var server = box.dataset.server || 'tencent';
-      Promise.all(ids.map(function (id) {
+      // 一首一个请求，串行跑上百首会很慢；限并发逐批走
+      var CONC = 6;
+      var out = new Array(ids.length);
+      var cursor = 0;
+      function worker() {
+        if (cursor >= ids.length) return Promise.resolve();
+        var i = cursor++, id = ids[i];
         return fetch(api(server, 'song', id))
           .then(function (r) { return r.json(); })
           .then(function (d) {
             var s = Array.isArray(d) ? d[0] : d;
-            if (!s || !s.url || !s.name) return null;
-            return { name: s.name, artist: s.artist || '', url: s.url, cover: s.pic || '', lrc: s.lrc || '' };
+            if (s && s.url && s.name) {
+              out[i] = { name: s.name, artist: s.artist || '', url: s.url, cover: s.pic || '', lrc: s.lrc || '' };
+            }
           })
-          .catch(function () { return null; });
-      })).then(function (list) {
-        list = list.filter(Boolean);
-        if (!list.length) {
-          box.innerHTML = '<p class="aplayer-multi-empty">这几首歌暂时取不到，可能音源下架了。</p>';
-          return;
-        }
+          .catch(function () {})
+          .then(worker);
+      }
+      Promise.all(Array.apply(null, Array(Math.min(CONC, ids.length))).map(worker))
+        .then(function () { return out.filter(Boolean); })
+        .then(function (list) {
+          if (!list.length) {
+            box.innerHTML = '<p class="aplayer-multi-empty">这几首歌暂时取不到，可能音源下架了。</p>';
+            return;
+          }
         // 注意：这版 APlayer 只吃单对象参数 {container, audio}，不支持 new APlayer(el, opts)
         new APlayer({
           container: box,
