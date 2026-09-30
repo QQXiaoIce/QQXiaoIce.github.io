@@ -2,69 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.qfmy.vip/cyber-checklist-vol-02/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/cyber-checklist-vol-03/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/python/argparse-advanced/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/cyber-checklist-vol-04/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/python/sys-argv-introduction/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/cyber-checklist-vol-05/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.qfmy.vip/three-snow-mountains/</loc>
-    
-    <lastmod>2026-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.qfmy.vip/loneliness-cruelest-part/</loc>
     
     <lastmod>2026-09-30</lastmod>
@@ -183,6 +120,69 @@
   
   <url>
     <loc>https://blog.qfmy.vip/cyber-checklist-vol-01/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/cyber-checklist-vol-02/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/cyber-checklist-vol-03/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/python/sys-argv-introduction/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/cyber-checklist-vol-04/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/python/argparse-advanced/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/cyber-checklist-vol-05/</loc>
+    
+    <lastmod>2026-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.qfmy.vip/three-snow-mountains/</loc>
     
     <lastmod>2026-09-30</lastmod>
     
@@ -538,14 +538,14 @@
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/tags/argparse/</loc>
+    <loc>https://blog.qfmy.vip/tags/sys-%E6%A8%A1%E5%9D%97/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/tags/sys-%E6%A8%A1%E5%9D%97/</loc>
+    <loc>https://blog.qfmy.vip/tags/argparse/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -659,14 +659,14 @@
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/categories/Python/</loc>
+    <loc>https://blog.qfmy.vip/categories/%E5%BF%83%E7%90%86%E5%AD%A6/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.qfmy.vip/categories/%E5%BF%83%E7%90%86%E5%AD%A6/</loc>
+    <loc>https://blog.qfmy.vip/categories/Python/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
